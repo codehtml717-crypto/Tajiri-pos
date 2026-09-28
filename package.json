@@ -1,0 +1,53 @@
+{
+  "name": "tajiripos",
+  "version": "1.0.0",
+  "private": true,
+  "main": "desktop.js",
+  "scripts": {
+    "test": "jest --forceExit",
+    "build:hosting": "node scripts/build-hosting.js",
+    "api": "node daraja/server.js",
+    "desktop": "electron .",
+    "build:win": "electron-builder --win",
+    "dist": "electron-builder --win",
+    "lint": "eslint ."
+  },
+  "build": {
+    "appId": "com.tajiripos.app",
+    "productName": "Tajiri POS",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/__tests__/**",
+      "!**/*.test.js",
+      "!dist/**",
+      "!**/.git/**",
+      "!**/.DS_Store"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "TajiriPOS-${version}-setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^25.1.4",
+    "eslint": "^10.11.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated"
+  }
+}

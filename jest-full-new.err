@@ -1,0 +1,2277 @@
+(node:6360) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+(node:7360) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+FAIL __tests__/app.business.test.js (201.223 s)
+  ● Console
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:53:3)
+          at Object.loginAsCashier (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:222:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at confirmModal (__tests__/app.business.test.js:53:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:222:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at Object.confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:233:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at Object.confirmModal (__tests__/app.business.test.js:233:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at Object.confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:244:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at Object.confirmModal (__tests__/app.business.test.js:244:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:53:3)
+          at Object.loginAsCashier (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:254:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at confirmModal (__tests__/app.business.test.js:53:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:254:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:53:3)
+          at Object.loginAsCashier (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:263:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at confirmModal (__tests__/app.business.test.js:53:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:263:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:26:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:30:3)
+          at confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:53:3)
+          at Object.loginAsCashier (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.business.test.js:402:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:30:3)
+      at confirmModal (__tests__/app.business.test.js:53:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:402:5)
+
+  ● sale recording (completeSaleRecord) › completing a sale persists it to localStorage with correct totals
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:74:5)
+
+  ● sale recording (completeSaleRecord) › sale ids increment sequentially (SALE-2085, SALE-2086, ...)
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:90:5)
+
+  ● sale recording (completeSaleRecord) › wholesale multiplier is reflected in recorded unit prices
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:99:5)
+
+  ● sale recording (completeSaleRecord) › discount is included in the recorded sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:111:5)
+
+  ● sale recording (completeSaleRecord) › receipt modal shows the sale id, total and loyalty points
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:135:5)
+
+  ● inventory updates after a sale › stock is reduced by the quantity sold
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:148:5)
+
+  ● inventory updates after a sale › several different products each lose their own stock
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:153:5)
+
+  ● inventory updates after a sale › low stock alert is raised and stock clamps at zero when sold out
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:161:34)
+
+  ● inventory updates after a sale › a purchase order is suggested with the matching supplier
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:169:34)
+
+  ● inventory updates after a sale › only one purchase order is created even after many low-stock sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:181:34)
+
+  ● inventory updates after a sale › no purchase order while stock stays above the threshold
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:186:5)
+
+  ● inventory updates after a sale › inventory panel reflects new stock after a sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:191:5)
+
+  ● loyalty points › 1 point is awarded per whole 100 spent
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:199:5)
+
+  ● loyalty points › points accumulate across sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:204:5)
+
+  ● staff login and roles › valid PIN signs the cashier in and greets them
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:54:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:222:5)
+
+  ● staff login and roles › wrong PIN is rejected and no user is signed in (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:234:5)
+
+  ● staff login and roles › PIN matching trims surrounding whitespace (edge case)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:245:5)
+
+  ● staff login and roles › cashier cannot open admin-only views (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:54:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:254:5)
+
+  ● staff login and roles › admin-only navigation items are hidden from cashiers
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:54:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:263:5)
+
+  ● persistence (saveState / loadState) › state saved before a restart is restored on the next boot
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:300:5)
+
+  ● persistence (saveState / loadState) › restored stock levels are reflected in the inventory panel
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:309:5)
+
+  ● persistence (saveState / loadState) › corrupt localStorage does not crash the app on boot (negative)
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 3
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">â—†</span><strong>Maize flour (2kg)</strong><span>Staples Â· KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">â—†</span><strong>Wheat flour (2kg)</strong><span>Staples Â· KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">â—†</span><strong>Rice (Pishori) (2kg)</strong><span>Staples Â· KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">â—†</span><strong>Rice (Basmati) (2kg)</strong><span>Staples Â· KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">â—†</span><strong>Sugar (1kg)</strong><span>Staples Â· KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">â—†</span><strong>Cooking oil (1L)</strong><span>Staples Â· KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">â—†</span><strong>Salt (500g)</strong><span>Staples Â· KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">â—†</span><strong>Tea leaves (100g)</strong><span>Staples Â· KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">â—†</span><strong>Bread (400g)</strong><span>Staples Â· KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">â—†</span><strong>Margarine (250g)</strong><span>Staples Â· KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 321 |[39m     jest[33m.[39mresetModules()[33m;[39m
+     [90m 322 |[39m     expect(() [33m=>[39m require([32m"../app.js"[39m))[33m.[39mnot[33m.[39mtoThrow()[33m;[39m
+    [31m[1m>[22m[39m[90m 323 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength([35m3[39m)[33m;[39m
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 324 |[39m     expect(document[33m.[39mquerySelector([32m"#subtotal"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"0.00"[39m)[33m;[39m
+     [90m 325 |[39m   })[33m;[39m
+     [90m 326 |[39m })[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.business.test.js:323:56)
+
+  ● reports panel › an expense reduces the reported net profit
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:330:5)
+
+  ● reports panel › payment mix shows a 100% share for a single method
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:354:5)
+
+  ● reports panel › top seller reflects the most-sold product
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:364:5)
+
+  ● offline mode and syncing › sales made online are marked as synced
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:384:5)
+
+  ● offline mode and syncing › sales made offline are marked as not synced
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:395:5)
+
+  ● settings › non-admin cannot save settings (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:54:3)
+      at Object.loginAsCashier (__tests__/app.business.test.js:402:5)
+
+  ● settings › admin can change the VAT rate and it applies to new sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:412:5)
+
+  ● settings › switching currency converts displayed prices (edge case)
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:428:5)
+
+  ● product management (admin) › admin can add a product through the modal
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 2
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">â—†</span><strong>Maize flour (2kg)</strong><span>Staples Â· KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="1790138862989">
+          <span class="product-color">ï¼‹</span><strong>Maize Flour 2kg</strong><span>General Â· KES 210.00</span>
+        </button>]
+
+    [0m [90m 443 |[39m     )[33m;[39m
+     [90m 444 |[39m     type(document[33m.[39mquerySelector([32m"#productSearch"[39m)[33m,[39m [32m"maize"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 445 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 446 |[39m   })[33m;[39m
+     [90m 447 |[39m
+     [90m 448 |[39m   test([32m"adding a product without a name or price is rejected (negative)"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toHaveLength (__tests__/app.business.test.js:445:56)
+
+  ● panels rendering › customers panel lists customers with tiers and points
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "James Ochieng · +254700111000"
+    Received string:    "Faith Njeri Â· +254700111111Retail Â· 45 ptsPeter Mwangi Â· +254700222333Wholesale Â· 310 pts"
+
+    [0m [90m 469 |[39m   test([32m"customers panel lists customers with tiers and points"[39m[33m,[39m () [33m=>[39m {
+     [90m 470 |[39m     [36mconst[39m text [33m=[39m document[33m.[39mquerySelector([32m"#customerList"[39m)[33m.[39mtextContent[33m;[39m
+    [31m[1m>[22m[39m[90m 471 |[39m     expect(text)[33m.[39mtoContain([32m"James Ochieng · +254700111000"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 472 |[39m     expect(text)[33m.[39mtoContain([32m"VIP · 120 pts"[39m)[33m;[39m
+     [90m 473 |[39m   })[33m;[39m
+     [90m 474 |[39m[0m
+
+      at Object.toContain (__tests__/app.business.test.js:471:18)
+
+  ● panels rendering › staff panel distinguishes admin and cashier roles
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Admin · Active"
+    Received string:    "
+              EMPLOYEESStaff access
+              James OchiengAdmin Â· full accessFaith NjeriCashier Â· sales onlyFaith NjeriAdmin Â· full access
+            "
+
+    [0m [90m 476 |[39m     [90m// The staff view contains static role rows in the markup[39m
+     [90m 477 |[39m     [36mconst[39m text [33m=[39m document[33m.[39mquerySelector([32m'section[data-view="Staff"]'[39m)[33m.[39mtextContent[33m;[39m
+    [31m[1m>[22m[39m[90m 478 |[39m     expect(text)[33m.[39mtoContain([32m"Admin · Active"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 479 |[39m     expect(text)[33m.[39mtoContain([32m"Cashier · Active"[39m)[33m;[39m
+     [90m 480 |[39m   })[33m;[39m
+     [90m 481 |[39m[0m
+
+      at Object.toContain (__tests__/app.business.test.js:478:18)
+
+  ● panels rendering › receipt preview is populated after a sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:504:5)
+
+  ● receipt actions › print action in the receipt modal triggers window.print
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:514:5)
+
+  ● receipt actions › 'Done' in the receipt opens the feedback rating modal
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:521:5)
+
+  ● receipt actions › clicking a rating star thanks the user and closes the modal
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:530:5)
+
+FAIL __tests__/app.extra.test.js (207.152 s)
+  ● search suggestions › empty query hides the suggestion list (edge case)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    [0m [90m  95 |[39m     expect(
+     [90m  96 |[39m       document[33m.[39mquerySelector([32m"#searchSuggestions"[39m)[33m.[39mhidden[33m,[39m
+    [31m[1m>[22m[39m[90m  97 |[39m     )[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m     |[39m       [31m[1m^[22m[39m
+     [90m  98 |[39m   })[33m;[39m
+     [90m  99 |[39m   test([32m"pressing Enter adds the first suggestion and clears the search"[39m[33m,[39m () [33m=>[39m {
+     [90m 100 |[39m     type(document[33m.[39mquerySelector([32m"#productSearch"[39m)[33m,[39m [32m"milk"[39m)[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.extra.test.js:97:7)
+
+  ● M-Pesa payment › accepts the 07XXXXXXXX, 2547XXXXXXXX and +254 formats (edge cases)
+
+    thrown: "Exceeded timeout of 5000 ms for a test.
+    Add a timeout value to this test to increase the timeout, if this is a long-running test. See https://jestjs.io/docs/api#testname-fn-timeout."
+
+    [0m [90m 176 |[39m     expect(rowFor([32m"Sugar (1kg)"[39m))[33m.[39mtoBeDefined()[33m;[39m
+     [90m 177 |[39m   })[33m;[39m
+    [31m[1m>[22m[39m[90m 178 |[39m   test([32m"accepts the 07XXXXXXXX, 2547XXXXXXXX and +254 formats (edge cases)"[39m[33m,[39m [36masync[39m () [33m=>[39m {
+     [90m     |[39m   [31m[1m^[22m[39m
+     [90m 179 |[39m     [36mconst[39m valid [33m=[39m [[32m"0712345678"[39m[33m,[39m [32m"254712345678"[39m[33m,[39m [32m"+254712345678"[39m[33m,[39m [32m"0112345678"[39m][33m;[39m
+     [90m 180 |[39m     [36mfor[39m ([36mconst[39m phone [36mof[39m valid) {
+     [90m 181 |[39m       document[33m.[39mbody[33m.[39minnerHTML [33m=[39m global[33m.[39m__APP_BODY_TEMPLATE__[33m;[39m[0m
+
+      at test (__tests__/app.extra.test.js:178:3)
+      at Object.describe (__tests__/app.extra.test.js:162:1)
+
+  ● inventory management (admin) › deletes a product and removes it from the catalogue and cart
+
+    expect(received).toBeUndefined()
+
+    Received: <div class="cart-row">
+          <div><span class="item-name">Sugar (1kg)</span><span class="item-code">SKU F005</span></div>
+          <div class="quantity"><button aria-label="Decrease Sugar (1kg)" data-action="decrease" data-id="5">âˆ’</button><span>1</span><button aria-label="Increase Sugar (1kg)" data-action="increase" data-id="5">ï¼‹</button></div>
+          <span class="price">160.00</span>
+          <span class="amount">160.00</span>
+          <button aria-label="Remove Sugar (1kg)" class="remove" data-action="remove" data-id="5">Ã—</button>
+        </div>
+
+    [0m [90m 294 |[39m       [32m"Sugar (1kg) deleted"[39m[33m,[39m
+     [90m 295 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 296 |[39m     expect(rowFor([32m"Sugar (1kg)"[39m))[33m.[39mtoBeUndefined()[33m;[39m
+     [90m     |[39m                                   [31m[1m^[22m[39m
+     [90m 297 |[39m     openView([32m"Sales"[39m)[33m;[39m
+     [90m 298 |[39m     expect(cardFor([32m"Sugar"[39m))[33m.[39mtoBeUndefined()[33m;[39m
+     [90m 299 |[39m   })[33m;[39m[0m
+
+      at Object.toBeUndefined (__tests__/app.extra.test.js:296:35)
+
+  ● settings › saves VAT, currency and shows the summary toast (positive)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Settings saved · VAT 16% · USD"
+    Received: "Settings saved Â· VAT 16% Â· USD"
+
+    [0m [90m 376 |[39m     document[33m.[39mquerySelector([32m"#currencySelect"[39m)[33m.[39mvalue [33m=[39m [32m"USD"[39m[33m;[39m
+     [90m 377 |[39m     click(document[33m.[39mquerySelector([32m"#saveSettingsButton"[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 378 |[39m     expect(document[33m.[39mquerySelector([32m"#toast"[39m)[33m.[39mtextContent)[33m.[39mtoBe(
+     [90m     |[39m                                                          [31m[1m^[22m[39m
+     [90m 379 |[39m       [32m"Settings saved · VAT 16% · USD"[39m[33m,[39m
+     [90m 380 |[39m     )[33m;[39m
+     [90m 381 |[39m     expect(document[33m.[39mquerySelector([32m"#taxRateLabel"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"16%"[39m)[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.extra.test.js:378:58)
+
+  ● receipt actions after a sale › WhatsApp share opens wa.me with the receipt summary
+
+    expect(jest.fn()).toHaveBeenCalledTimes(expected)
+
+    Expected number of calls: 1
+    Received number of calls: 33
+
+    [0m [90m 405 |[39m     window[33m.[39mopen [33m=[39m jest[33m.[39mfn()[33m;[39m
+     [90m 406 |[39m     click(document[33m.[39mquerySelector([32m'[data-receipt-action="whatsapp"]'[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 407 |[39m     expect(window[33m.[39mopen)[33m.[39mtoHaveBeenCalledTimes([35m1[39m)[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 408 |[39m     [36mconst[39m url [33m=[39m window[33m.[39mopen[33m.[39mmock[33m.[39mcalls[[35m0[39m][[35m0[39m][33m;[39m
+     [90m 409 |[39m     expect(url)[33m.[39mtoContain([32m"https://wa.me/"[39m)[33m;[39m
+     [90m 410 |[39m     expect(url)[33m.[39mtoContain(encodeURIComponent([32m"SALE-2085"[39m))[33m;[39m[0m
+
+      at Object.toHaveBeenCalledTimes (__tests__/app.extra.test.js:407:25)
+
+  ● receipt actions after a sale › print action calls window.print
+
+    expect(jest.fn()).toHaveBeenCalledTimes(expected)
+
+    Expected number of calls: 1
+    Received number of calls: 34
+
+    [0m [90m 413 |[39m     window[33m.[39mprint [33m=[39m jest[33m.[39mfn()[33m;[39m
+     [90m 414 |[39m     click(document[33m.[39mquerySelector([32m'[data-receipt-action="print"]'[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 415 |[39m     expect(window[33m.[39mprint)[33m.[39mtoHaveBeenCalledTimes([35m1[39m)[33m;[39m
+     [90m     |[39m                          [31m[1m^[22m[39m
+     [90m 416 |[39m   })[33m;[39m
+     [90m 417 |[39m   test([32m"Done opens the star rating and a rating click thanks the cashier"[39m[33m,[39m () [33m=>[39m {
+     [90m 418 |[39m     click(document[33m.[39mquerySelector([32m'[data-receipt-action="feedback"]'[39m))[33m;[39m[0m
+
+      at Object.toHaveBeenCalledTimes (__tests__/app.extra.test.js:415:26)
+
+  ● sale persistence › completed sales, loyalty and stock levels are saved to localStorage
+
+    expect(received).toBeLessThan(expected)
+
+    Expected: < 30
+    Received:   59
+
+    [0m [90m 439 |[39m     expect(
+     [90m 440 |[39m       state[33m.[39mproductsStock[33m.[39mfind((p) [33m=>[39m p[33m.[39mid [33m===[39m [35m5[39m)[33m.[39mstock[33m,[39m
+    [31m[1m>[22m[39m[90m 441 |[39m     )[33m.[39mtoBeLessThan([35m30[39m)[33m;[39m [90m// Sugar starts at 30[39m
+     [90m     |[39m       [31m[1m^[22m[39m
+     [90m 442 |[39m   })[33m;[39m
+     [90m 443 |[39m   test([32m"corrupt localStorage state does not crash the boot (edge case)"[39m[33m,[39m () [33m=>[39m {
+     [90m 444 |[39m     document[33m.[39mbody[33m.[39minnerHTML [33m=[39m global[33m.[39m__APP_BODY_TEMPLATE__[33m;[39m[0m
+
+      at Object.toBeLessThan (__tests__/app.extra.test.js:441:7)
+
+  ● create staff account (admin) › creates a cashier account with a valid PIN (positive)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at Object.click (__tests__/app.extra.test.js:465:5)
+
+  ● create staff account (admin) › rejects a PIN shorter than 4 digits (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at Object.click (__tests__/app.extra.test.js:479:5)
+
+  ● create staff account (admin) › rejects a duplicate account name (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at Object.click (__tests__/app.extra.test.js:488:5)
+
+  ● create staff account (admin) › rejects missing fields (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at Object.click (__tests__/app.extra.test.js:497:5)
+
+  ● signup modal validation (admin path) › creates the account and persists it (positive)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at click (__tests__/app.extra.test.js:509:5)
+      at Object.openSignup (__tests__/app.extra.test.js:519:5)
+
+  ● signup modal validation (admin path) › rejects a duplicate username or email (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at click (__tests__/app.extra.test.js:509:5)
+      at Object.openSignup (__tests__/app.extra.test.js:531:5)
+
+  ● signup modal validation (admin path) › rejects weak passwords (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at click (__tests__/app.extra.test.js:509:5)
+      at Object.openSignup (__tests__/app.extra.test.js:548:7)
+
+  ● signup modal validation (admin path) › rejects mismatched confirmation (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at click (__tests__/app.extra.test.js:509:5)
+      at Object.openSignup (__tests__/app.extra.test.js:560:5)
+
+  ● signup modal validation (admin path) › rejects a malformed email (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 22 |[39m }
+     [90m 23 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 24 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 25 |[39m }
+     [90m 26 |[39m [36mfunction[39m clickChild(container[33m,[39m html) {
+     [90m 27 |[39m   container[33m.[39minnerHTML [33m=[39m html[33m;[39m[0m
+
+      at dispatchEvent (__tests__/app.extra.test.js:24:11)
+      at click (__tests__/app.extra.test.js:509:5)
+      at Object.openSignup (__tests__/app.extra.test.js:570:5)
+
+(node:10392) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+FAIL __tests__/app.test.js (302.294 s)
+  ● Console
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+          at navigateFetch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+          at exports.navigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+          at Location.set href [as href] (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+          at HTMLDivElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\app.js:589:25)
+          at HTMLDivElement.callTheUserObjectsOperation (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+          at innerInvokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+          at invokeEventListeners (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+          at dispatchEvent (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.test.js:32:11)
+          at click (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.test.js:47:3)
+          at Object.confirmModal (C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\app.test.js:601:5)
+          at Promise.then.completed (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:298:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\utils.js:231:10)
+          at _callCircusTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:316:40)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at _runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:252:3)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:126:9)
+          at _runTestsForDescribeBlock (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:121:9)
+          at run (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\run.js:71:3)
+          at runAndTransformResultsToJestFormat (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+          at jestAdapter (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+          at runTestInternal (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:367:16)
+          at runTest (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\runTest.js:444:34)
+          at Object.worker (C:\Users\konya\OneDrive\Desktop\tajiripos\node_modules\jest-runner\build\testWorker.js:106:12) {
+        type: 'not implemented'
+      }
+
+    [0m [90m 587 |[39m     closeModal()[33m;[39m
+     [90m 588 |[39m     showToast([32m"Signed out"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 589 |[39m     window[33m.[39mlocation[33m.[39mhref [33m=[39m [32m"welcome.html"[39m[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 590 |[39m     [36mreturn[39m[33m;[39m
+     [90m 591 |[39m   }
+     [90m 592 |[39m   [36mif[39m (modalPurpose [33m===[39m [32m"reset-settings"[39m) {[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jest-environment-jsdom/build/index.js:63:23)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at HTMLDivElement.<anonymous> (app.js:589:25)
+      at HTMLDivElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at dispatchEvent (__tests__/app.test.js:32:11)
+      at click (__tests__/app.test.js:47:3)
+      at Object.confirmModal (__tests__/app.test.js:601:5)
+
+  ● payment flows › M-Pesa payment collects customer details before sending the request
+
+    ReferenceError: flushAsync is not defined
+
+    [0m [90m 483 |[39m     document[33m.[39mquerySelector([32m"#mpesaPhone"[39m)[33m.[39mvalue [33m=[39m [32m"0712345678"[39m[33m;[39m
+     [90m 484 |[39m     confirmModal()[33m;[39m
+    [31m[1m>[22m[39m[90m 485 |[39m     [36mawait[39m flushAsync()[33m;[39m
+     [90m     |[39m     [31m[1m^[22m[39m
+     [90m 486 |[39m     expect(document[33m.[39mquerySelector([32m"#toast"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"M-Pesa prompt sent"[39m)[33m;[39m
+     [90m 487 |[39m     expect(global[33m.[39mfetch)[33m.[39mtoHaveBeenCalled()[33m;[39m
+     [90m 488 |[39m     expect(document[33m.[39mquerySelectorAll([32m".cart-row"[39m))[33m.[39mtoHaveLength([35m0[39m)[33m;[39m[0m
+
+      at Object.<anonymous> (__tests__/app.test.js:485:5)
+
+FAIL __tests__/app.search.test.js (138.592 s)
+  ● search bar: initial state › full catalogue is rendered before any query
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 42
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">â—†</span><strong>Maize flour (2kg)</strong><span>Staples Â· KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">â—†</span><strong>Wheat flour (2kg)</strong><span>Staples Â· KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">â—†</span><strong>Rice (Pishori) (2kg)</strong><span>Staples Â· KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">â—†</span><strong>Rice (Basmati) (2kg)</strong><span>Staples Â· KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">â—†</span><strong>Sugar (1kg)</strong><span>Staples Â· KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">â—†</span><strong>Cooking oil (1L)</strong><span>Staples Â· KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">â—†</span><strong>Salt (500g)</strong><span>Staples Â· KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">â—†</span><strong>Tea leaves (100g)</strong><span>Staples Â· KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">â—†</span><strong>Bread (400g)</strong><span>Staples Â· KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">â—†</span><strong>Margarine (250g)</strong><span>Staples Â· KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 44 |[39m describe([32m"search bar: initial state"[39m[33m,[39m () [33m=>[39m {
+     [90m 45 |[39m   test([32m"full catalogue is rendered before any query"[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 46 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength(
+     [90m    |[39m                                                        [31m[1m^[22m[39m
+     [90m 47 |[39m       [33mTOTAL_PRODUCTS[39m[33m,[39m
+     [90m 48 |[39m     )[33m;[39m
+     [90m 49 |[39m     expect(searchBox()[33m.[39mvalue)[33m.[39mtoBe([32m""[39m)[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.search.test.js:46:56)
+
+  ● search bar: multi-keyword matching › matches by product name (case-insensitive)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 59 |[39m   test([32m"matches by product name (case-insensitive)"[39m[33m,[39m () [33m=>[39m {
+     [90m 60 |[39m     type(searchBox()[33m,[39m [32m"MILK"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 61 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m    |[39m                         [31m[1m^[22m[39m
+     [90m 62 |[39m   })[33m;[39m
+     [90m 63 |[39m
+     [90m 64 |[39m   test([32m"matches by item code / SKU (e.g. F005)"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:61:25)
+
+  ● search bar: edge cases › empty query restores the full catalogue
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 42
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">â—†</span><strong>Maize flour (2kg)</strong><span>Staples Â· KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">â—†</span><strong>Wheat flour (2kg)</strong><span>Staples Â· KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">â—†</span><strong>Rice (Pishori) (2kg)</strong><span>Staples Â· KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">â—†</span><strong>Rice (Basmati) (2kg)</strong><span>Staples Â· KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">â—†</span><strong>Sugar (1kg)</strong><span>Staples Â· KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">â—†</span><strong>Cooking oil (1L)</strong><span>Staples Â· KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">â—†</span><strong>Salt (500g)</strong><span>Staples Â· KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">â—†</span><strong>Tea leaves (100g)</strong><span>Staples Â· KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">â—†</span><strong>Bread (400g)</strong><span>Staples Â· KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">â—†</span><strong>Margarine (250g)</strong><span>Staples Â· KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 166 |[39m     type(searchBox()[33m,[39m [32m"milk"[39m)[33m;[39m
+     [90m 167 |[39m     type(searchBox()[33m,[39m [32m""[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 168 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength(
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 169 |[39m       [33mTOTAL_PRODUCTS[39m[33m,[39m
+     [90m 170 |[39m     )[33m;[39m
+     [90m 171 |[39m   })[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.search.test.js:168:56)
+
+  ● search bar: edge cases › adding to the cart while filtered keeps the filter applied
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 194 |[39m     type(searchBox()[33m,[39m [32m"milk"[39m)[33m;[39m
+     [90m 195 |[39m     click(document[33m.[39mquerySelector([32m".product-card"[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 196 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 197 |[39m     expect(document[33m.[39mquerySelectorAll([32m".cart-row"[39m))[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m 198 |[39m   })[33m;[39m
+     [90m 199 |[39m[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:196:25)
+
+  ● search bar: edge cases › search filter survives a sale-type change (renderProducts uses the live query)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 211 |[39m     saleType[33m.[39mvalue [33m=[39m [32m"wholesale"[39m[33m;[39m
+     [90m 212 |[39m     saleType[33m.[39mdispatchEvent([36mnew[39m [33mEvent[39m([32m"change"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+    [31m[1m>[22m[39m[90m 213 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 214 |[39m   })[33m;[39m
+     [90m 215 |[39m
+     [90m 216 |[39m   test([32m"wholesale pricing is visible on cards rendered via search"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:213:25)
+
+  ● receipt: header (shop name, receipt no, time, cashier, method) › shows the store name as the header
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Main Store"
+    Received: "DanLiz Shop"
+
+    [0m [90m 276 |[39m     [36mconst[39m paper [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper"[39m)[33m;[39m
+     [90m 277 |[39m     expect(paper)[33m.[39mnot[33m.[39mtoBeNull()[33m;[39m
+    [31m[1m>[22m[39m[90m 278 |[39m     expect(paper[33m.[39mquerySelector([32m"strong"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"Main Store"[39m)[33m;[39m
+     [90m     |[39m                                                       [31m[1m^[22m[39m
+     [90m 279 |[39m   })[33m;[39m
+     [90m 280 |[39m
+     [90m 281 |[39m   test([32m"shows the receipt number, time and payment method on one line"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toBe (__tests__/app.search.test.js:278:55)
+
+  ● receipt: header (shop name, receipt no, time, cashier, method) › shows the receipt number, time and payment method on one line
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "SALE-2085"
+    Received string:    "Bondo, Siaya County"
+
+    [0m [90m 283 |[39m     [36mconst[39m meta [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper span"[39m)
+     [90m 284 |[39m       [33m.[39mtextContent[33m;[39m
+    [31m[1m>[22m[39m[90m 285 |[39m     expect(meta)[33m.[39mtoContain([32m"SALE-2085"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 286 |[39m     expect(meta)[33m.[39mtoContain([32m"Cash"[39m)[33m;[39m
+     [90m 287 |[39m     expect(meta)[33m.[39mtoMatch([35m/\d{1,2}:\d{2}/[39m)[33m;[39m [90m// hh:mm time[39m
+     [90m 288 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:285:18)
+
+  ● receipt: itemized list › lists product name, quantity and line total for each item
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "× 1"
+    Received string:    "Sugar (1kg)1160.00160.00"
+
+    [0m [90m 297 |[39m     [36mconst[39m first [33m=[39m lines[[35m0[39m][33m;[39m
+     [90m 298 |[39m     expect(first[33m.[39mtextContent)[33m.[39mtoContain([32m"Sugar (1kg)"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 299 |[39m     expect(first[33m.[39mtextContent)[33m.[39mtoContain([32m"× 1"[39m)[33m;[39m
+     [90m     |[39m                               [31m[1m^[22m[39m
+     [90m 300 |[39m     expect(first[33m.[39mquerySelector([32m"b"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"160.00"[39m)[33m;[39m
+     [90m 301 |[39m   })[33m;[39m
+     [90m 302 |[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:299:31)
+
+  ● receipt: itemized list › reflects the quantity for a multi-unit line (edge case)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "× 2"
+    Received string:    "Sugar (1kg)2160.00320.00"
+
+    [0m [90m 310 |[39m       [32m"#modalBody .receipt-paper .receipt-line"[39m[33m,[39m
+     [90m 311 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 312 |[39m     expect(line[33m.[39mtextContent)[33m.[39mtoContain([32m"× 2"[39m)[33m;[39m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 313 |[39m     expect(line[33m.[39mquerySelector([32m"b"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"320.00"[39m)[33m;[39m
+     [90m 314 |[39m   })[33m;[39m
+     [90m 315 |[39m })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:312:30)
+
+  ● receipt: totals › shows subtotal, discount, VAT and the final total
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Total"
+    Received string:    "
+          DanLiz ShopBondo, Siaya CountyTel: 0712 345 678Receipt No: 000456 Â· SALE-2085 Â· Cash Â· 07:50
+          Receipt No: 00045623/09/2026 Â· 07:50Cashier: James OchiengCustomer: Walk-in customerTransaction: SALE-2085
+          ItemQtyPriceSubtotal
+          Sugar (1kg)1160.00160.00
+          Subtotal160.00Discount-0.00VAT0.00Service charge0.00TOTAL160.00
+          Payment Method: CashTransaction ID: SALE-2085
+          Thank you for shopping with us!You earned 1 loyalty points today.Goods once sold are not returnable.Karibu tena DanLiz Shop!
+        "
+
+    [0m [90m 324 |[39m     expect(text)[33m.[39mtoContain([32m"VAT"[39m)[33m;[39m
+     [90m 325 |[39m     expect(text)[33m.[39mtoContain([32m"0.00"[39m)[33m;[39m [90m// tax rate defaults to 0[39m
+    [31m[1m>[22m[39m[90m 326 |[39m     expect(text)[33m.[39mtoContain([32m"Total"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 327 |[39m     expect(text)[33m.[39mtoContain([32m"160.00"[39m)[33m;[39m
+     [90m 328 |[39m   })[33m;[39m
+     [90m 329 |[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:326:18)
+
+  ● receipt: payment info › shows a QR placeholder referencing the transaction (sale) id
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+    [0m [90m 346 |[39m     sellSugar()[33m;[39m
+     [90m 347 |[39m     [36mconst[39m qr [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper .qr-placeholder"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 348 |[39m     expect(qr)[33m.[39mnot[33m.[39mtoBeNull()[33m;[39m
+     [90m     |[39m                    [31m[1m^[22m[39m
+     [90m 349 |[39m     expect(qr[33m.[39mtextContent)[33m.[39mtoContain([32m"SALE-2085"[39m)[33m;[39m
+     [90m 350 |[39m   })[33m;[39m
+     [90m 351 |[39m[0m
+
+      at Object.toBeNull (__tests__/app.search.test.js:348:20)
+
+  ● receipt: payment info › the receipt preview panel repeats the transaction id (edge case)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "SALE-2085"
+    Received string:    "
+        DanLiz ShopBondo, Siaya CountyTel: 0712 345 678Receipt No: 000456 Â· 23/09/2026 07:50
+        Sugar (1kg) Ã— 1160.00
+        Subtotal160.00
+        Discount-0.00
+        VAT0.00
+        Service charge0.00
+        Total160.00
+        Thank you for shopping with us!You earned 1 loyalty points today.Goods once sold are not returnable.Karibu tena DanLiz Shop!"
+
+    [0m [90m 352 |[39m   test([32m"the receipt preview panel repeats the transaction id (edge case)"[39m[33m,[39m () [33m=>[39m {
+     [90m 353 |[39m     sellSugar()[33m;[39m
+    [31m[1m>[22m[39m[90m 354 |[39m     expect(document[33m.[39mquerySelector([32m"#receiptPreview"[39m)[33m.[39mtextContent)[33m.[39mtoContain(
+     [90m     |[39m                                                                   [31m[1m^[22m[39m
+     [90m 355 |[39m       [32m"SALE-2085"[39m[33m,[39m
+     [90m 356 |[39m     )[33m;[39m
+     [90m 357 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:354:67)
+
+FAIL __tests__/app.accounts.test.js (53.54 s)
+  ● account creation by admin › admin opens the add-account modal from the Staff panel
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at Object.click (__tests__/app.accounts.test.js:70:5)
+
+  ● account creation by admin › admin creates a cashier account and it appears in the staff list
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:77:5)
+
+  ● account creation by admin › a newly created account can log in with its PIN
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:88:5)
+
+  ● account creation by admin › admin can create another admin account (positive)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:99:5)
+
+  ● account creation by admin › created accounts persist across an app restart (edge case)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:107:5)
+
+  ● account creation validation (negative) › empty name is rejected
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:126:5)
+      at Object.openAccountModal (__tests__/app.accounts.test.js:130:5)
+
+  ● account creation validation (negative) › empty PIN is rejected
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:126:5)
+      at Object.openAccountModal (__tests__/app.accounts.test.js:142:5)
+
+  ● account creation validation (negative) › PIN shorter than 4 digits is rejected (edge case)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:126:5)
+      at Object.openAccountModal (__tests__/app.accounts.test.js:153:5)
+
+  ● account creation validation (negative) › duplicate account name is rejected (edge case)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:164:5)
+
+  ● only admins manage accounts › cashier cannot open the add-account modal (negative)
+
+    TypeError: Cannot read properties of null (reading 'dispatchEvent')
+
+    [0m [90m 32 |[39m
+     [90m 33 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 34 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 35 |[39m }
+     [90m 36 |[39m
+     [90m 37 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.accounts.test.js:34:11)
+      at click (__tests__/app.accounts.test.js:60:3)
+      at Object.adminCreatesAccount (__tests__/app.accounts.test.js:177:5)
+
+FAIL __tests__/debug.login.test.js (9.053 s)
+  ● debug login
+
+    ReferenceError: TextEncoder is not defined
+
+    [0m [90m 46 |[39m   [36mconst[39m digest [33m=[39m [36mawait[39m require([32m"crypto"[39m)[33m.[39mwebcrypto[33m.[39msubtle[33m.[39mdigest(
+     [90m 47 |[39m     [32m"SHA-256"[39m[33m,[39m
+    [31m[1m>[22m[39m[90m 48 |[39m     [36mnew[39m [33mTextEncoder[39m()[33m.[39mencode([32m"secret123"[39m)[33m,[39m
+     [90m    |[39m         [31m[1m^[22m[39m
+     [90m 49 |[39m   )[33m;[39m
+     [90m 50 |[39m   accounts[[35m0[39m][33m.[39mpasswordHash [33m=[39m [[33m...[39m[36mnew[39m [33mUint8Array[39m(digest)]
+     [90m 51 |[39m     [33m.[39mmap((b) [33m=>[39m b[33m.[39mtoString([35m16[39m)[33m.[39mpadStart([35m2[39m[33m,[39m [32m"0"[39m))[0m
+
+      at Object.TextEncoder (__tests__/debug.login.test.js:48:9)
+
+FAIL __tests__/app.admin.test.js (159.212 s)
+  ● expenses › an expense without a note uses a readable fallback label (edge case)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Rent · Expense"
+    Received string:    "·······
+            â–¼ Rent Â· Expense
+            -KES 250.00
+          "
+
+    [0m [90m 207 |[39m     [90m// keeps the plain expense type as its label.[39m
+     [90m 208 |[39m     expect(document[33m.[39mquerySelector([32m"#expenseList"[39m)[33m.[39mtextContent)[33m.[39mtoContain([32m"no note"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 209 |[39m     expect(document[33m.[39mquerySelector([32m"#cashBookList"[39m)[33m.[39mtextContent)[33m.[39mtoContain([32m"Rent · Expense"[39m)[33m;[39m
+     [90m     |[39m                                                                 [31m[1m^[22m[39m
+     [90m 210 |[39m   })[33m;[39m
+     [90m 211 |[39m })[33m;[39m
+     [90m 212 |[39m[0m
+
+      at Object.toContain (__tests__/app.admin.test.js:209:65)
+
+  ● reports panel › shows zeros before any sales exist (edge case)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "—"
+    Received: "â€”"
+
+    [0m [90m 409 |[39m       [32m"No sales yet"[39m[33m,[39m
+     [90m 410 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 411 |[39m     expect(document[33m.[39mquerySelector([32m"#reportPaymentMix"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"—"[39m)[33m;[39m
+     [90m     |[39m                                                                     [31m[1m^[22m[39m
+     [90m 412 |[39m   })[33m;[39m
+     [90m 413 |[39m
+     [90m 414 |[39m   test([32m"summarises sales, VAT and payment mix after sales exist (positive)"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toBe (__tests__/app.admin.test.js:411:69)
+
+  ● reports panel › summarises sales, VAT and payment mix after sales exist (positive)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Sugar (1kg) · 1 sold"
+    Received string:    "Sugar (1kg) Â· 1 sold"
+
+    [0m [90m 427 |[39m       [32m"Cash 100%"[39m[33m,[39m
+     [90m 428 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 429 |[39m     expect(document[33m.[39mquerySelector([32m"#reportTop"[39m)[33m.[39mtextContent)[33m.[39mtoContain(
+     [90m     |[39m                                                              [31m[1m^[22m[39m
+     [90m 430 |[39m       [32m"Sugar (1kg) · 1 sold"[39m[33m,[39m
+     [90m 431 |[39m     )[33m;[39m
+     [90m 432 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.admin.test.js:429:62)
+
+FAIL __tests__/welcome.test.js (42.834 s)
+  ● welcome.html static markup › login form is the active tab by default when accounts exist
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    [0m [90m 106 |[39m
+     [90m 107 |[39m   test([32m"login form is the active tab by default when accounts exist"[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 108 |[39m     expect(byId([32m"loginForm"[39m)[33m.[39mclassList[33m.[39mcontains([32m"active"[39m))[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m     |[39m                                                            [31m[1m^[22m[39m
+     [90m 109 |[39m     expect(byId([32m"tabLogin"[39m)[33m.[39mgetAttribute([32m"aria-selected"[39m))[33m.[39mtoBe([32m"true"[39m)[33m;[39m
+     [90m 110 |[39m     expect(byId([32m"signupForm"[39m)[33m.[39mclassList[33m.[39mcontains([32m"active"[39m))[33m.[39mtoBe([36mfalse[39m)[33m;[39m
+     [90m 111 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (__tests__/welcome.test.js:108:60)
+
+  ● accounts store › falls back to users saved by the main app when its own store is empty
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    [0m [90m 164 |[39m       submit(byId([32m"loginForm"[39m))[33m;[39m
+     [90m 165 |[39m       [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 166 |[39m       expect(byId([32m"loginError"[39m)[33m.[39mhidden)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m     |[39m                                         [31m[1m^[22m[39m
+     [90m 167 |[39m     })[33m;[39m
+     [90m 168 |[39m   })[33m;[39m
+     [90m 169 |[39m[0m
+
+      at toBe (__tests__/welcome.test.js:166:41)
+
+  ● login form › accepts valid username + password and navigates to index.html
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "index.html"
+    Received: ""
+
+    [0m [90m 198 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+     [90m 199 |[39m     jest[33m.[39madvanceTimersByTime([35m700[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 200 |[39m     expect(window[33m.[39mlocation[33m.[39mhref)[33m.[39mtoBe([32m"index.html"[39m)[33m;[39m
+     [90m     |[39m                                  [31m[1m^[22m[39m
+     [90m 201 |[39m     expect(sessionStorage[33m.[39mgetItem([32m"tajiri-session-user"[39m))[33m.[39mtoBe([32m"amina"[39m)[33m;[39m
+     [90m 202 |[39m     expect(byId([32m"loginError"[39m)[33m.[39mhidden)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m 203 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (__tests__/welcome.test.js:200:34)
+
+  ● login form › login is case-insensitive for username and trims whitespace
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "index.html"
+    Received: ""
+
+    [0m [90m 211 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+     [90m 212 |[39m     expect(byId([32m"loginError"[39m)[33m.[39mhidden)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 213 |[39m     expect(window[33m.[39mlocation[33m.[39mhref)[33m.[39mtoBe([32m"index.html"[39m)[33m;[39m
+     [90m     |[39m                                  [31m[1m^[22m[39m
+     [90m 214 |[39m   })[33m;[39m
+     [90m 215 |[39m
+     [90m 216 |[39m   test([32m"accepts a matching email as the identity"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toBe (__tests__/welcome.test.js:213:34)
+
+  ● login form › rejects a wrong password
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /Invalid username/i
+    Received string:  ""
+
+    [0m [90m 231 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+     [90m 232 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 233 |[39m     expect(byId([32m"loginError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/Invalid username/i[39m)[33m;[39m
+     [90m     |[39m                                            [31m[1m^[22m[39m
+     [90m 234 |[39m     expect(window[33m.[39mlocation[33m.[39mhref)[33m.[39mtoBe([32m""[39m)[33m;[39m
+     [90m 235 |[39m   })[33m;[39m
+     [90m 236 |[39m[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:233:44)
+
+  ● login form › 'Remember me' persists the identity; unchecked clears it
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "amina"
+    Received: "stale-user"
+
+    [0m [90m 254 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+     [90m 255 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 256 |[39m     expect(localStorage[33m.[39mgetItem([32m"tajiri-remembered-user"[39m))[33m.[39mtoBe([32m"amina"[39m)[33m;[39m
+     [90m     |[39m                                                            [31m[1m^[22m[39m
+     [90m 257 |[39m
+     [90m 258 |[39m     boot({ accounts[33m:[39m seedOne()[33m,[39m remembered[33m:[39m [32m"stale-user"[39m })[33m;[39m
+     [90m 259 |[39m     byId([32m"loginIdentity"[39m)[33m.[39mvalue [33m=[39m [32m"amina"[39m[33m;[39m[0m
+
+      at Object.toBe (__tests__/welcome.test.js:256:60)
+
+  ● signup form › creates an account, stores it hashed, and navigates
+
+    expect(received).toHaveLength(expected)
+
+    Matcher error: received value must have a length property whose value must be a number
+
+    Received has value: null
+
+    [0m [90m 296 |[39m
+     [90m 297 |[39m     [36mconst[39m users [33m=[39m [33mJSON[39m[33m.[39mparse(localStorage[33m.[39mgetItem([32m"tajiri-pos-accounts"[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 298 |[39m     expect(users)[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m     |[39m                   [31m[1m^[22m[39m
+     [90m 299 |[39m     expect(users[[35m0[39m])[33m.[39mtoMatchObject({
+     [90m 300 |[39m       name[33m:[39m [32m"Amina Otieno"[39m[33m,[39m
+     [90m 301 |[39m       username[33m:[39m [32m"amina"[39m[33m,[39m[0m
+
+      at Object.toHaveLength (__tests__/welcome.test.js:298:19)
+
+  ● signup form › rejects malformed emails
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /valid email/i
+    Received string:  "Complete all required fields."
+
+    [0m [90m 325 |[39m     submit(byId([32m"signupForm"[39m))[33m;[39m
+     [90m 326 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 327 |[39m     expect(byId([32m"signupError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/valid email/i[39m)[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 328 |[39m   })[33m;[39m
+     [90m 329 |[39m
+     [90m 330 |[39m   test([32m"rejects weak passwords (short / no digit / no letter)"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:327:45)
+
+  ● signup form › rejects weak passwords (short / no digit / no letter)
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /8\+ characters/
+    Received string:  "Complete all required fields."
+
+    [0m [90m 337 |[39m       submit(byId([32m"signupForm"[39m))[33m;[39m
+     [90m 338 |[39m       [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 339 |[39m       expect(byId([32m"signupError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/8\+ characters/[39m)[33m;[39m
+     [90m     |[39m                                               [31m[1m^[22m[39m
+     [90m 340 |[39m     }
+     [90m 341 |[39m   })[33m;[39m
+     [90m 342 |[39m[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:339:47)
+
+  ● signup form › rejects mismatched password confirmation
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /do not match/i
+    Received string:  "Complete all required fields."
+
+    [0m [90m 346 |[39m     submit(byId([32m"signupForm"[39m))[33m;[39m
+     [90m 347 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 348 |[39m     expect(byId([32m"signupError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/do not match/i[39m)[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 349 |[39m   })[33m;[39m
+     [90m 350 |[39m
+     [90m 351 |[39m   test([32m"rejects a duplicate username case-insensitively"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:348:45)
+
+  ● signup form › rejects a duplicate username case-insensitively
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /already taken/i
+    Received string:  "Complete all required fields."
+
+    [0m [90m 354 |[39m     submit(byId([32m"signupForm"[39m))[33m;[39m
+     [90m 355 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 356 |[39m     expect(byId([32m"signupError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/already taken/i[39m)[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 357 |[39m   })[33m;[39m
+     [90m 358 |[39m
+     [90m 359 |[39m   test([32m"rejects a duplicate email case-insensitively"[39m[33m,[39m [36masync[39m () [33m=>[39m {[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:356:45)
+
+  ● signup form › rejects a duplicate email case-insensitively
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /already exists/i
+    Received string:  "Complete all required fields."
+
+    [0m [90m 362 |[39m     submit(byId([32m"signupForm"[39m))[33m;[39m
+     [90m 363 |[39m     [36mawait[39m [33mPromise[39m[33m.[39mresolve()[33m;[39m
+    [31m[1m>[22m[39m[90m 364 |[39m     expect(byId([32m"signupError"[39m)[33m.[39mtextContent)[33m.[39mtoMatch([35m/already exists/i[39m)[33m;[39m
+     [90m     |[39m                                             [31m[1m^[22m[39m
+     [90m 365 |[39m   })[33m;[39m
+     [90m 366 |[39m })[33m;[39m
+     [90m 367 |[39m[0m
+
+      at Object.toMatch (__tests__/welcome.test.js:364:45)
+
+C:\Users\konya\OneDrive\Desktop\tajiripos\welcome.js:20
+  const el = id => document.getElementById(id);
+                            ^
+
+TypeError: Cannot read properties of undefined (reading 'getElementById')
+    at el (C:\Users\konya\OneDrive\Desktop\tajiripos\welcome.js:20:29)
+    at HTMLFormElement.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\welcome.js:106:9)
+
+Node.js v24.18.1
+PASS __tests__/app.cashbook.test.js (35.352 s)
+PASS __tests__/env.probe.test.js
+  ● Console
+
+    console.log
+      TextEncoder: undefined
+
+      at Object.log (__tests__/env.probe.test.js:5:11)
+
+    console.log
+      crypto: object subtle: object
+
+      at Object.log (__tests__/env.probe.test.js:6:11)
+
+    console.log
+      fetch: undefined
+
+      at Object.log (__tests__/env.probe.test.js:7:11)
+
+FAIL __tests__/debug.boot.test.js
+  ● Test suite failed to run
+
+    Jest encountered an unexpected token
+
+    Jest failed to parse a file. This happens e.g. when your code or its dependencies use non-standard JavaScript syntax, or when Jest is not configured to support such syntax.
+
+    Out of the box Jest supports Babel, which will be used to transform your files into valid JS based on your Babel configuration.
+
+    By default "node_modules" folder is ignored by transformers.
+
+    Here's what you can do:
+     • If you are trying to use ECMAScript Modules, see https://jestjs.io/docs/ecmascript-modules for how to enable it.
+     • If you are trying to use TypeScript, see https://jestjs.io/docs/getting-started#using-typescript
+     • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
+     • If you need a custom transformation specify a "transform" option in your config.
+     • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
+
+    You'll find more details and examples of these config options in the docs:
+    https://jestjs.io/docs/configuration
+    For information about custom transformations, see:
+    https://jestjs.io/docs/code-transformation
+
+    Details:
+
+    SyntaxError: C:\Users\konya\OneDrive\Desktop\tajiripos\__tests__\debug.boot.test.js: Unexpected token (23:0)
+
+    [0m [90m 21 |[39m   )[33m;[39m
+     [90m 22 |[39m   console[33m.[39mlog([32m"cards:"[39m[33m,[39m document[33m.[39mquerySelectorAll([32m".product-card"[39m)[33m.[39mlength)[33m;[39m
+    [31m[1m>[22m[39m[90m 23 |[39m })[33m;[39m
+     [90m    |[39m [31m[1m^[22m[39m
+     [90m 24 |[39m[0m
+
+      at constructor (node_modules/@babel/parser/src/parse-error.ts:96:45)
+      at Parser.toParseError [as raise] (node_modules/@babel/parser/src/tokenizer/index.ts:1504:19)
+      at Parser.raise [as unexpected] (node_modules/@babel/parser/src/tokenizer/index.ts:1544:16)
+      at Parser.unexpected [as parseExprAtom] (node_modules/@babel/parser/src/parser/expression.ts:1385:22)
+      at Parser.parseExprAtom [as parseExprSubscripts] (node_modules/@babel/parser/src/parser/expression.ts:742:23)
+      at Parser.parseExprSubscripts [as parseUpdate] (node_modules/@babel/parser/src/parser/expression.ts:721:21)
+      at Parser.parseUpdate [as parseMaybeUnary] (node_modules/@babel/parser/src/parser/expression.ts:683:23)
+      at Parser.parseMaybeUnary [as parseMaybeUnaryOrPrivate] (node_modules/@babel/parser/src/parser/expression.ts:417:14)
+      at Parser.parseMaybeUnaryOrPrivate [as parseExprOps] (node_modules/@babel/parser/src/parser/expression.ts:429:23)
+      at Parser.parseExprOps [as parseMaybeConditional] (node_modules/@babel/parser/src/parser/expression.ts:384:23)
+      at Parser.parseMaybeConditional [as parseMaybeAssign] (node_modules/@babel/parser/src/parser/expression.ts:301:21)
+      at Parser.parseMaybeAssign [as parseExpressionBase] (node_modules/@babel/parser/src/parser/expression.ts:226:23)
+      at parseExpressionBase (node_modules/@babel/parser/src/parser/expression.ts:217:39)
+      at Parser.callback [as allowInAnd] (node_modules/@babel/parser/src/parser/expression.ts:3222:16)
+      at Parser.allowInAnd [as parseExpression] (node_modules/@babel/parser/src/parser/expression.ts:217:17)
+      at Parser.parseExpression [as parseStatementContent] (node_modules/@babel/parser/src/parser/statement.ts:688:23)
+      at Parser.parseStatementContent [as parseStatementLike] (node_modules/@babel/parser/src/parser/statement.ts:482:17)
+      at Parser.parseStatementLike [as parseModuleItem] (node_modules/@babel/parser/src/parser/statement.ts:419:17)
+      at Parser.parseModuleItem [as parseBlockOrModuleBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1443:16)
+      at Parser.parseBlockOrModuleBlockBody [as parseBlockBody] (node_modules/@babel/parser/src/parser/statement.ts:1417:10)
+      at Parser.parseBlockBody [as parseProgram] (node_modules/@babel/parser/src/parser/statement.ts:229:10)
+      at Parser.parseProgram [as parseTopLevel] (node_modules/@babel/parser/src/parser/statement.ts:203:25)
+      at Parser.parseTopLevel [as parse] (node_modules/@babel/parser/src/parser/index.ts:83:25)
+      at parse (node_modules/@babel/parser/src/index.ts:86:38)
+      at parser (node_modules/@babel/core/src/parser/index.ts:29:19)
+          at parser.next (<anonymous>)
+      at normalizeFile (node_modules/@babel/core/src/transformation/normalize-file.ts:49:24)
+          at normalizeFile.next (<anonymous>)
+      at run (node_modules/@babel/core/src/transformation/index.ts:41:36)
+          at run.next (<anonymous>)
+      at transform (node_modules/@babel/core/src/transform.ts:29:20)
+          at transform.next (<anonymous>)
+      at evaluateSync (node_modules/gensync/index.js:251:28)
+      at sync (node_modules/gensync/index.js:89:14)
+      at fn (node_modules/@babel/core/src/errors/rewrite-stack-trace.ts:99:14)
+      at transformSync (node_modules/@babel/core/src/transform.ts:66:52)
+      at ScriptTransformer.transformSource (node_modules/@jest/transform/build/ScriptTransformer.js:545:31)
+      at ScriptTransformer._transformAndBuildScript (node_modules/@jest/transform/build/ScriptTransformer.js:674:40)
+      at ScriptTransformer.transform (node_modules/@jest/transform/build/ScriptTransformer.js:726:19)
+
+(node:7480) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+PASS __tests__/daraja.server.test.js (5.516 s)
+  ● Console
+
+    console.log
+      Tajiri Daraja API listening on http://localhost:43199
+
+      at Server.log (daraja/server.js:146:35)
+
+    console.error
+      Error: Bad credentials
+          at getAccessToken (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:68:51)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:77:17)
+          at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+    console.error
+      Error: Invalid passkey
+          at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:98:11)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+    console.error
+      Error: Daraja STK push failed
+          at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:98:11)
+          at processTicksAndRejections (node:internal/process/task_queues:104:5)
+          at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+    console.error
+      Error: Request body must be valid JSON
+          at IncomingMessage.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:42:22)
+          at IncomingMessage.emit (node:events:509:28)
+          at endReadableNT (node:internal/streams/readable:1729:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+    console.error
+      Error: Request body too large
+          at IncomingMessage.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:38:50)
+          at IncomingMessage.emit (node:events:509:28)
+          at addChunk (node:internal/streams/readable:563:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+          at IncomingMessage.Readable.push (node:internal/streams/readable:394:5)
+          at HTTPParser.parserOnBody (node:_http_common:137:24)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+PASS __tests__/app.payments.test.js (61.929 s)
+A worker process has failed to exit gracefully and has been force exited. This is likely caused by tests leaking due to improper teardown. Try running with --detectOpenHandles to find leaks. Active timers can also cause this, ensure that .unref() was called on them.
+
+Test Suites: 9 failed, 4 passed, 13 total
+Tests:       92 failed, 267 passed, 359 total
+Snapshots:   0 total
+Time:        438.001 s
+Ran all test suites.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

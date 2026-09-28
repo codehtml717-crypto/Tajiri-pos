@@ -1,0 +1,157 @@
+﻿jest.cmd : (node:12872) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland 
+alternative instead.
+At line:1 char:305
++ ...  -NoNewline; & node_modules\.bin\jest.cmd $p --forceExit 2>&1 | Out-S ...
++                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:12872) [D...native instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+  console.log
+    Tajiri Daraja API listening on http://localhost:43199
+
+      at Server.log (daraja/server.js:146:35)
+
+  console.error
+    Error: Bad credentials
+        at getAccessToken (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:68:51)
+        at processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:77:17)
+        at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+  console.error
+    Error: Invalid passkey
+        at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:98:11)
+        at processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+  console.error
+    Error: Daraja STK push failed
+        at sendStkPush (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:98:11)
+        at processTicksAndRejections (node:internal/process/task_queues:104:5)
+        at Server.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:127:22)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+  console.error
+    Error: Request body must be valid JSON
+        at IncomingMessage.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:42:22)
+        at IncomingMessage.emit (node:events:509:28)
+        at endReadableNT (node:internal/streams/readable:1729:12)
+        at processTicksAndRejections (node:internal/process/task_queues:90:21)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+  console.error
+    Error: Request body too large
+        at IncomingMessage.<anonymous> (C:\Users\konya\OneDrive\Desktop\tajiripos\daraja\server.js:38:50)
+        at IncomingMessage.emit (node:events:509:28)
+        at addChunk (node:internal/streams/readable:563:12)
+        at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+        at IncomingMessage.Readable.push (node:internal/streams/readable:394:5)
+        at HTTPParser.parserOnBody (node:_http_common:137:24)
+
+    [0m [90m 139 |[39m     [36mreturn[39m json(response[33m,[39m [35m404[39m[33m,[39m { error[33m:[39m [32m"Not found"[39m })[33m;[39m
+     [90m 140 |[39m   } [36mcatch[39m (error) {
+    [31m[1m>[22m[39m[90m 141 |[39m     console[33m.[39merror(error)[33m;[39m
+     [90m     |[39m             [31m[1m^[22m[39m
+     [90m 142 |[39m     [36mreturn[39m json(response[33m,[39m [35m502[39m[33m,[39m { error[33m:[39m error[33m.[39mmessage [33m||[39m [32m"Request failed"[39m })[33m;[39m
+     [90m 143 |[39m   }
+     [90m 144 |[39m })[33m;[39m[0m
+
+      at Server.error (daraja/server.js:141:13)
+
+PASS __tests__/daraja.server.test.js
+  server boot
+    √ exposes the expected port from PORT env (no default 3000 clash) (5 ms)
+  GET /api/health
+    √ returns ok:true and darajaConfigured:true when env is complete (positive) (230 ms)
+    √ sends CORS headers on every response (positive) (5 ms)
+    √ health reports darajaConfigured:false when a required var is removed (negative) (4 ms)
+  OPTIONS preflight
+    √ returns 204 with CORS headers (positive) (8 ms)
+  POST /api/mpesa/stk-push
+    √ rejects with 503 and the missing var names when not configured (negative) (12 ms)
+    √ returns 400 when amount is missing (negative) (16 ms)
+    √ returns 400 when amount is 0 (negative) (3 ms)
+    √ returns 400 when amount is negative (negative) (13 ms)
+    √ returns 400 when amount is not numeric (negative) (3 ms)
+    √ accepts amount exactly 1 (edge) (5 ms)
+    √ returns 400 when phone is missing (negative) (3 ms)
+    √ rejects phone "12345" (too short) (negative) (4 ms)
+    √ rejects phone "071234567" (8 digits after 07 â€” too short) (negative) (2 ms)
+    √ rejects phone "07123456789" (9 digits after 07 â€” too long) (negative) (2 ms)
+    √ rejects phone "0612345678" (unsupported prefix 06) (negative) (2 ms)
+    √ rejects phone "+447911123456" (non-Kenyan international) (negative) (4 ms)
+    √ rejects phone "abcdefghij" (not digits) (negative) (8 ms)
+    √ rejects phone null (null phone) (negative) (3 ms)
+    √ normalises phone "0712345678" to "254712345678" (positive) (13 ms)
+    √ normalises phone "0112345678" to "254112345678" (positive) (4 ms)
+    √ normalises phone "254712345678" to "254712345678" (positive) (9 ms)
+    √ normalises phone "+254712345678" to "254712345678" (positive) (4 ms)
+    √ sends a correctly shaped Daraja payload (positive) (6 ms)
+    √ caches the OAuth token across requests (edge) (24 ms)
+    √ returns 502 with the Daraja error when the token request fails (negative) (70 ms)
+    √ returns 502 when the STK push responds with an error code (negative) (36 ms)
+    √ falls back to a generic error message when Daraja gives none (edge) (16 ms)
+    √ stores the transaction after a successful push (positive) (11 ms)
+  body parsing
+    √ returns 502 with a clear message for invalid JSON (negative) (8 ms)
+    √ treats an empty body as an empty object (edge) (3 ms)
+    √ destroys oversized request bodies (negative/edge) (17 ms)
+  POST /api/mpesa/callback
+    √ marks a transaction SUCCESS on ResultCode 0 (positive) (20 ms)
+    √ marks a transaction FAILED on a non-zero ResultCode (negative) (5 ms)
+    √ accepts a callback for an unknown checkout id (edge) (8 ms)
+    √ returns transaction:null when CheckoutRequestID is missing (negative) (3 ms)
+    √ returns transaction:null for a completely empty payload (edge) (4 ms)
+  GET /api/mpesa/transactions/:id
+    √ returns 404 for an unknown id (negative) (2 ms)
+  routing
+    √ returns 404 for unknown paths (negative) (2 ms)
+    √ returns 404 for a known path with the wrong method (negative) (3 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       40 passed, 40 total
+Snapshots:   0 total
+Time:        5.685 s, estimated 12 s
+Ran all test suites matching /__tests__\\daraja.server.test.js/i.
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after 
+all tests finished?
+

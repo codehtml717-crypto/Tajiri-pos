@@ -1,0 +1,943 @@
+FAIL __tests__/app.search.test.js (109.409 s)
+  ● search bar: initial state › full catalogue is rendered before any query
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 42
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">◆</span><strong>Maize flour (2kg)</strong><span>Staples · KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">◆</span><strong>Wheat flour (2kg)</strong><span>Staples · KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">◆</span><strong>Rice (Pishori) (2kg)</strong><span>Staples · KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">◆</span><strong>Rice (Basmati) (2kg)</strong><span>Staples · KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">◆</span><strong>Sugar (1kg)</strong><span>Staples · KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">◆</span><strong>Cooking oil (1L)</strong><span>Staples · KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">◆</span><strong>Salt (500g)</strong><span>Staples · KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">◆</span><strong>Tea leaves (100g)</strong><span>Staples · KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">◆</span><strong>Bread (400g)</strong><span>Staples · KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">◆</span><strong>Margarine (250g)</strong><span>Staples · KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 44 |[39m describe([32m"search bar: initial state"[39m[33m,[39m () [33m=>[39m {
+     [90m 45 |[39m   test([32m"full catalogue is rendered before any query"[39m[33m,[39m () [33m=>[39m {
+    [31m[1m>[22m[39m[90m 46 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength(
+     [90m    |[39m                                                        [31m[1m^[22m[39m
+     [90m 47 |[39m       [33mTOTAL_PRODUCTS[39m[33m,[39m
+     [90m 48 |[39m     )[33m;[39m
+     [90m 49 |[39m     expect(searchBox()[33m.[39mvalue)[33m.[39mtoBe([32m""[39m)[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.search.test.js:46:56)
+
+  ● search bar: multi-keyword matching › matches by product name (case-insensitive)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 59 |[39m   test([32m"matches by product name (case-insensitive)"[39m[33m,[39m () [33m=>[39m {
+     [90m 60 |[39m     type(searchBox()[33m,[39m [32m"MILK"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 61 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m    |[39m                         [31m[1m^[22m[39m
+     [90m 62 |[39m   })[33m;[39m
+     [90m 63 |[39m
+     [90m 64 |[39m   test([32m"matches by item code / SKU (e.g. F005)"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:61:25)
+
+  ● search bar: edge cases › empty query restores the full catalogue
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 42
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">◆</span><strong>Maize flour (2kg)</strong><span>Staples · KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">◆</span><strong>Wheat flour (2kg)</strong><span>Staples · KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">◆</span><strong>Rice (Pishori) (2kg)</strong><span>Staples · KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">◆</span><strong>Rice (Basmati) (2kg)</strong><span>Staples · KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">◆</span><strong>Sugar (1kg)</strong><span>Staples · KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">◆</span><strong>Cooking oil (1L)</strong><span>Staples · KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">◆</span><strong>Salt (500g)</strong><span>Staples · KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">◆</span><strong>Tea leaves (100g)</strong><span>Staples · KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">◆</span><strong>Bread (400g)</strong><span>Staples · KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">◆</span><strong>Margarine (250g)</strong><span>Staples · KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 166 |[39m     type(searchBox()[33m,[39m [32m"milk"[39m)[33m;[39m
+     [90m 167 |[39m     type(searchBox()[33m,[39m [32m""[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 168 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength(
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 169 |[39m       [33mTOTAL_PRODUCTS[39m[33m,[39m
+     [90m 170 |[39m     )[33m;[39m
+     [90m 171 |[39m   })[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.search.test.js:168:56)
+
+  ● search bar: edge cases › adding to the cart while filtered keeps the filter applied
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 194 |[39m     type(searchBox()[33m,[39m [32m"milk"[39m)[33m;[39m
+     [90m 195 |[39m     click(document[33m.[39mquerySelector([32m".product-card"[39m))[33m;[39m
+    [31m[1m>[22m[39m[90m 196 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 197 |[39m     expect(document[33m.[39mquerySelectorAll([32m".cart-row"[39m))[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m 198 |[39m   })[33m;[39m
+     [90m 199 |[39m[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:196:25)
+
+  ● search bar: edge cases › search filter survives a sale-type change (renderProducts uses the live query)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+      Array [
+        "Milk (500ml)",
+    +   "Fresh Milk (1 Litre)",
+      ]
+
+    [0m [90m 211 |[39m     saleType[33m.[39mvalue [33m=[39m [32m"wholesale"[39m[33m;[39m
+     [90m 212 |[39m     saleType[33m.[39mdispatchEvent([36mnew[39m [33mEvent[39m([32m"change"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+    [31m[1m>[22m[39m[90m 213 |[39m     expect(cardNames())[33m.[39mtoEqual([[32m"Milk (500ml)"[39m])[33m;[39m
+     [90m     |[39m                         [31m[1m^[22m[39m
+     [90m 214 |[39m   })[33m;[39m
+     [90m 215 |[39m
+     [90m 216 |[39m   test([32m"wholesale pricing is visible on cards rendered via search"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toEqual (__tests__/app.search.test.js:213:25)
+
+  ● receipt: header (shop name, receipt no, time, cashier, method) › shows the store name as the header
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Main Store"
+    Received: "DanLiz Shop"
+
+    [0m [90m 276 |[39m     [36mconst[39m paper [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper"[39m)[33m;[39m
+     [90m 277 |[39m     expect(paper)[33m.[39mnot[33m.[39mtoBeNull()[33m;[39m
+    [31m[1m>[22m[39m[90m 278 |[39m     expect(paper[33m.[39mquerySelector([32m"strong"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"Main Store"[39m)[33m;[39m
+     [90m     |[39m                                                       [31m[1m^[22m[39m
+     [90m 279 |[39m   })[33m;[39m
+     [90m 280 |[39m
+     [90m 281 |[39m   test([32m"shows the receipt number, time and payment method on one line"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toBe (__tests__/app.search.test.js:278:55)
+
+  ● receipt: header (shop name, receipt no, time, cashier, method) › shows the receipt number, time and payment method on one line
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "SALE-2085"
+    Received string:    "Bondo, Siaya County"
+
+    [0m [90m 283 |[39m     [36mconst[39m meta [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper span"[39m)
+     [90m 284 |[39m       [33m.[39mtextContent[33m;[39m
+    [31m[1m>[22m[39m[90m 285 |[39m     expect(meta)[33m.[39mtoContain([32m"SALE-2085"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 286 |[39m     expect(meta)[33m.[39mtoContain([32m"Cash"[39m)[33m;[39m
+     [90m 287 |[39m     expect(meta)[33m.[39mtoMatch([35m/\d{1,2}:\d{2}/[39m)[33m;[39m [90m// hh:mm time[39m
+     [90m 288 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:285:18)
+
+  ● receipt: itemized list › lists product name, quantity and line total for each item
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "× 1"
+    Received string:    "Sugar (1kg)1160.00160.00"
+
+    [0m [90m 297 |[39m     [36mconst[39m first [33m=[39m lines[[35m0[39m][33m;[39m
+     [90m 298 |[39m     expect(first[33m.[39mtextContent)[33m.[39mtoContain([32m"Sugar (1kg)"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 299 |[39m     expect(first[33m.[39mtextContent)[33m.[39mtoContain([32m"× 1"[39m)[33m;[39m
+     [90m     |[39m                               [31m[1m^[22m[39m
+     [90m 300 |[39m     expect(first[33m.[39mquerySelector([32m"b"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"160.00"[39m)[33m;[39m
+     [90m 301 |[39m   })[33m;[39m
+     [90m 302 |[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:299:31)
+
+  ● receipt: itemized list › reflects the quantity for a multi-unit line (edge case)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "× 2"
+    Received string:    "Sugar (1kg)2160.00320.00"
+
+    [0m [90m 310 |[39m       [32m"#modalBody .receipt-paper .receipt-line"[39m[33m,[39m
+     [90m 311 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 312 |[39m     expect(line[33m.[39mtextContent)[33m.[39mtoContain([32m"× 2"[39m)[33m;[39m
+     [90m     |[39m                              [31m[1m^[22m[39m
+     [90m 313 |[39m     expect(line[33m.[39mquerySelector([32m"b"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"320.00"[39m)[33m;[39m
+     [90m 314 |[39m   })[33m;[39m
+     [90m 315 |[39m })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:312:30)
+
+  ● receipt: totals › shows subtotal, discount, VAT and the final total
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Total"
+    Received string:    "
+          DanLiz ShopBondo, Siaya CountyTel: 0712 345 678Receipt No: 000456 · SALE-2085 · Cash · 08:53
+          Receipt No: 00045620/09/2026 · 08:53Cashier: James OchiengCustomer: Walk-in customerTransaction: SALE-2085
+          ItemQtyPriceSubtotal
+          Sugar (1kg)1160.00160.00
+          Subtotal160.00Discount-0.00VAT0.00Service charge0.00TOTAL160.00
+          Payment Method: CashTransaction ID: SALE-2085
+          Thank you for shopping with us!You earned 1 loyalty points today.Goods once sold are not returnable.Karibu tena DanLiz Shop!
+        "
+
+    [0m [90m 324 |[39m     expect(text)[33m.[39mtoContain([32m"VAT"[39m)[33m;[39m
+     [90m 325 |[39m     expect(text)[33m.[39mtoContain([32m"0.00"[39m)[33m;[39m [90m// tax rate defaults to 0[39m
+    [31m[1m>[22m[39m[90m 326 |[39m     expect(text)[33m.[39mtoContain([32m"Total"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 327 |[39m     expect(text)[33m.[39mtoContain([32m"160.00"[39m)[33m;[39m
+     [90m 328 |[39m   })[33m;[39m
+     [90m 329 |[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:326:18)
+
+  ● receipt: payment info › shows a QR placeholder referencing the transaction (sale) id
+
+    expect(received).not.toBeNull()
+
+    Received: null
+
+    [0m [90m 346 |[39m     sellSugar()[33m;[39m
+     [90m 347 |[39m     [36mconst[39m qr [33m=[39m document[33m.[39mquerySelector([32m"#modalBody .receipt-paper .qr-placeholder"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 348 |[39m     expect(qr)[33m.[39mnot[33m.[39mtoBeNull()[33m;[39m
+     [90m     |[39m                    [31m[1m^[22m[39m
+     [90m 349 |[39m     expect(qr[33m.[39mtextContent)[33m.[39mtoContain([32m"SALE-2085"[39m)[33m;[39m
+     [90m 350 |[39m   })[33m;[39m
+     [90m 351 |[39m[0m
+
+      at Object.toBeNull (__tests__/app.search.test.js:348:20)
+
+  ● receipt: payment info › the receipt preview panel repeats the transaction id (edge case)
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "SALE-2085"
+    Received string:    "
+        DanLiz ShopBondo, Siaya CountyTel: 0712 345 678Receipt No: 000456 · 20/09/2026 08:53
+        Sugar (1kg) × 1160.00
+        Subtotal160.00
+        Discount-0.00
+        VAT0.00
+        Service charge0.00
+        Total160.00
+        Thank you for shopping with us!You earned 1 loyalty points today.Goods once sold are not returnable.Karibu tena DanLiz Shop!"
+
+    [0m [90m 352 |[39m   test([32m"the receipt preview panel repeats the transaction id (edge case)"[39m[33m,[39m () [33m=>[39m {
+     [90m 353 |[39m     sellSugar()[33m;[39m
+    [31m[1m>[22m[39m[90m 354 |[39m     expect(document[33m.[39mquerySelector([32m"#receiptPreview"[39m)[33m.[39mtextContent)[33m.[39mtoContain(
+     [90m     |[39m                                                                   [31m[1m^[22m[39m
+     [90m 355 |[39m       [32m"SALE-2085"[39m[33m,[39m
+     [90m 356 |[39m     )[33m;[39m
+     [90m 357 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.search.test.js:354:67)
+
+FAIL __tests__/app.cashbook.test.js (24.07 s)
+  ● cash book: money in from sales › a completed sale appears as a money-in entry
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    [0m [90m 103 |[39m     sellProduct([32m"Sugar"[39m)[33m;[39m
+     [90m 104 |[39m     openCashBook()[33m;[39m
+    [31m[1m>[22m[39m[90m 105 |[39m     expect(entryRows()[33m.[39mlength)[33m.[39mtoBe([35m1[39m)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 106 |[39m     expect(cashBook()[33m.[39mtextContent)[33m.[39mtoContain([32m"Sugar (1kg)"[39m)[33m;[39m
+     [90m 107 |[39m     expect(balanceText())[33m.[39mtoContain([32m"160.00"[39m)[33m;[39m
+     [90m 108 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.cashbook.test.js:105:32)
+
+  ● cash book: money in from sales › multiple sales accumulate and raise the balance
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 0
+
+    [0m [90m 112 |[39m     sellProduct([32m"Milk"[39m)[33m;[39m [90m// 75[39m
+     [90m 113 |[39m     openCashBook()[33m;[39m
+    [31m[1m>[22m[39m[90m 114 |[39m     expect(entryRows()[33m.[39mlength)[33m.[39mtoBe([35m2[39m)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 115 |[39m     expect(balanceText())[33m.[39mtoContain([32m"235.00"[39m)[33m;[39m
+     [90m 116 |[39m   })[33m;[39m
+     [90m 117 |[39m[0m
+
+      at Object.toBe (__tests__/app.cashbook.test.js:114:32)
+
+  ● cash book: money out from expenses › a recorded expense appears as a money-out entry and lowers the balance
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 2
+    Received: 0
+
+    [0m [90m 130 |[39m     confirmModal()[33m;[39m
+     [90m 131 |[39m     openCashBook()[33m;[39m
+    [31m[1m>[22m[39m[90m 132 |[39m     expect(entryRows()[33m.[39mlength)[33m.[39mtoBe([35m2[39m)[33m;[39m
+     [90m     |[39m                                [31m[1m^[22m[39m
+     [90m 133 |[39m     expect(balanceText())[33m.[39mtoContain([32m"130.00"[39m)[33m;[39m
+     [90m 134 |[39m   })[33m;[39m
+     [90m 135 |[39m })[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.cashbook.test.js:132:32)
+
+FAIL __tests__/app.business.test.js (153.986 s)
+  ● sale recording (completeSaleRecord) › completing a sale persists it to localStorage with correct totals
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:74:5)
+
+  ● sale recording (completeSaleRecord) › sale ids increment sequentially (SALE-2085, SALE-2086, ...)
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:90:5)
+
+  ● sale recording (completeSaleRecord) › wholesale multiplier is reflected in recorded unit prices
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:99:5)
+
+  ● sale recording (completeSaleRecord) › discount is included in the recorded sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:111:5)
+
+  ● sale recording (completeSaleRecord) › receipt modal shows the sale id, total and loyalty points
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:135:5)
+
+  ● inventory updates after a sale › stock is reduced by the quantity sold
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:148:5)
+
+  ● inventory updates after a sale › several different products each lose their own stock
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:153:5)
+
+  ● inventory updates after a sale › low stock alert is raised and stock clamps at zero when sold out
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:161:34)
+
+  ● inventory updates after a sale › a purchase order is suggested with the matching supplier
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:169:34)
+
+  ● inventory updates after a sale › only one purchase order is created even after many low-stock sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:181:34)
+
+  ● inventory updates after a sale › no purchase order while stock stays above the threshold
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:186:5)
+
+  ● inventory updates after a sale › inventory panel reflects new stock after a sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:191:5)
+
+  ● loyalty points › 1 point is awarded per whole 100 spent
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:199:5)
+
+  ● loyalty points › points accumulate across sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:204:5)
+
+  ● persistence (saveState / loadState) › state saved before a restart is restored on the next boot
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:300:5)
+
+  ● persistence (saveState / loadState) › restored stock levels are reflected in the inventory panel
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:309:5)
+
+  ● persistence (saveState / loadState) › corrupt localStorage does not crash the app on boot (negative)
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 3
+    Received length: 44
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">◆</span><strong>Maize flour (2kg)</strong><span>Staples · KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="2">
+          <span class="product-color">◆</span><strong>Wheat flour (2kg)</strong><span>Staples · KES 200.00</span>
+        </button>, <button class="product-card" data-product-id="3">
+          <span class="product-color">◆</span><strong>Rice (Pishori) (2kg)</strong><span>Staples · KES 380.00</span>
+        </button>, <button class="product-card" data-product-id="4">
+          <span class="product-color">◆</span><strong>Rice (Basmati) (2kg)</strong><span>Staples · KES 400.00</span>
+        </button>, <button class="product-card" data-product-id="5">
+          <span class="product-color">◆</span><strong>Sugar (1kg)</strong><span>Staples · KES 160.00</span>
+        </button>, <button class="product-card" data-product-id="6">
+          <span class="product-color">◆</span><strong>Cooking oil (1L)</strong><span>Staples · KES 270.00</span>
+        </button>, <button class="product-card" data-product-id="7">
+          <span class="product-color">◆</span><strong>Salt (500g)</strong><span>Staples · KES 35.00</span>
+        </button>, <button class="product-card" data-product-id="8">
+          <span class="product-color">◆</span><strong>Tea leaves (100g)</strong><span>Staples · KES 60.00</span>
+        </button>, <button class="product-card" data-product-id="9">
+          <span class="product-color">◆</span><strong>Bread (400g)</strong><span>Staples · KES 75.00</span>
+        </button>, <button class="product-card" data-product-id="10">
+          <span class="product-color">◆</span><strong>Margarine (250g)</strong><span>Staples · KES 120.00</span>
+        </button>, …]
+
+    [0m [90m 321 |[39m     jest[33m.[39mresetModules()[33m;[39m
+     [90m 322 |[39m     expect(() [33m=>[39m require([32m"../app.js"[39m))[33m.[39mnot[33m.[39mtoThrow()[33m;[39m
+    [31m[1m>[22m[39m[90m 323 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength([35m3[39m)[33m;[39m
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 324 |[39m     expect(document[33m.[39mquerySelector([32m"#subtotal"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"0.00"[39m)[33m;[39m
+     [90m 325 |[39m   })[33m;[39m
+     [90m 326 |[39m })[33m;[39m[0m
+
+      at Object.toHaveLength (__tests__/app.business.test.js:323:56)
+
+  ● reports panel › an expense reduces the reported net profit
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:330:5)
+
+  ● reports panel › payment mix shows a 100% share for a single method
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:354:5)
+
+  ● reports panel › top seller reflects the most-sold product
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:364:5)
+
+  ● reports panel › reports show placeholders when there is no sales history
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "â€”"
+    Received: "—"
+
+    [0m [90m 375 |[39m       [32m"No sales yet"[39m[33m,[39m
+     [90m 376 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 377 |[39m     expect(document[33m.[39mquerySelector([32m"#reportPaymentMix"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"â€”"[39m)[33m;[39m
+     [90m     |[39m                                                                     [31m[1m^[22m[39m
+     [90m 378 |[39m     expect(document[33m.[39mquerySelector([32m"#reportOrders"[39m)[33m.[39mtextContent)[33m.[39mtoBe([32m"0"[39m)[33m;[39m
+     [90m 379 |[39m   })[33m;[39m
+     [90m 380 |[39m })[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.business.test.js:377:69)
+
+  ● offline mode and syncing › sales made online are marked as synced
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:384:5)
+
+  ● offline mode and syncing › sales made offline are marked as not synced
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:395:5)
+
+  ● settings › admin can change the VAT rate and it applies to new sales
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:412:5)
+
+  ● settings › switching currency converts displayed prices (edge case)
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at Object.click (__tests__/app.business.test.js:428:5)
+
+  ● product management (admin) › admin can add a product through the modal
+
+    expect(received).toHaveLength(expected)
+
+    Expected length: 1
+    Received length: 2
+    Received object: [<button class="product-card" data-product-id="1">
+          <span class="product-color">◆</span><strong>Maize flour (2kg)</strong><span>Staples · KES 190.00</span>
+        </button>, <button class="product-card" data-product-id="1789883631620">
+          <span class="product-color">＋</span><strong>Maize Flour 2kg</strong><span>General · KES 210.00</span>
+        </button>]
+
+    [0m [90m 443 |[39m     )[33m;[39m
+     [90m 444 |[39m     type(document[33m.[39mquerySelector([32m"#productSearch"[39m)[33m,[39m [32m"maize"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 445 |[39m     expect(document[33m.[39mquerySelectorAll([32m".product-card"[39m))[33m.[39mtoHaveLength([35m1[39m)[33m;[39m
+     [90m     |[39m                                                        [31m[1m^[22m[39m
+     [90m 446 |[39m   })[33m;[39m
+     [90m 447 |[39m
+     [90m 448 |[39m   test([32m"adding a product without a name or price is rejected (negative)"[39m[33m,[39m () [33m=>[39m {[0m
+
+      at Object.toHaveLength (__tests__/app.business.test.js:445:56)
+
+  ● panels rendering › staff panel distinguishes admin and cashier roles
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Admin · Active"
+    Received string:    "
+              EMPLOYEESStaff access
+              James OchiengAdmin · full accessFaith NjeriCashier · sales only
+              Login / switch staff＋ Create account
+            "
+
+    [0m [90m 476 |[39m     [90m// The staff view contains static role rows in the markup[39m
+     [90m 477 |[39m     [36mconst[39m text [33m=[39m document[33m.[39mquerySelector([32m'section[data-view="Staff"]'[39m)[33m.[39mtextContent[33m;[39m
+    [31m[1m>[22m[39m[90m 478 |[39m     expect(text)[33m.[39mtoContain([32m"Admin · Active"[39m)[33m;[39m
+     [90m     |[39m                  [31m[1m^[22m[39m
+     [90m 479 |[39m     expect(text)[33m.[39mtoContain([32m"Cashier · Active"[39m)[33m;[39m
+     [90m 480 |[39m   })[33m;[39m
+     [90m 481 |[39m[0m
+
+      at Object.toContain (__tests__/app.business.test.js:478:18)
+
+  ● panels rendering › suppliers panel lists suppliers and the healthy-stock PO message
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "No suggested orders â€” stock levels healthy"
+    Received string:    "No suggested orders — stock levels healthy—"
+
+    [0m [90m 484 |[39m       [32m"Pembe Flour Mills"[39m[33m,[39m
+     [90m 485 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 486 |[39m     expect(document[33m.[39mquerySelector([32m"#purchaseOrderList"[39m)[33m.[39mtextContent)[33m.[39mtoContain(
+     [90m     |[39m                                                                      [31m[1m^[22m[39m
+     [90m 487 |[39m       [32m"No suggested orders â€” stock levels healthy"[39m[33m,[39m
+     [90m 488 |[39m     )[33m;[39m
+     [90m 489 |[39m   })[33m;[39m[0m
+
+      at Object.toContain (__tests__/app.business.test.js:486:70)
+
+  ● panels rendering › receipt preview is populated after a sale
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:504:5)
+
+  ● receipt actions › print action in the receipt modal triggers window.print
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:514:5)
+
+  ● receipt actions › 'Done' in the receipt opens the feedback rating modal
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:521:5)
+
+  ● receipt actions › clicking a rating star thanks the user and closes the modal
+
+    TypeError: Cannot read properties of undefined (reading 'dispatchEvent')
+
+    [0m [90m 24 |[39m
+     [90m 25 |[39m [36mfunction[39m click(element) {
+    [31m[1m>[22m[39m[90m 26 |[39m   element[33m.[39mdispatchEvent([36mnew[39m [33mMouseEvent[39m([32m"click"[39m[33m,[39m { bubbles[33m:[39m [36mtrue[39m }))[33m;[39m
+     [90m    |[39m           [31m[1m^[22m[39m
+     [90m 27 |[39m }
+     [90m 28 |[39m
+     [90m 29 |[39m [36mfunction[39m confirmModal() {[0m
+
+      at dispatchEvent (__tests__/app.business.test.js:26:11)
+      at click (__tests__/app.business.test.js:45:3)
+      at Object.sellProduct (__tests__/app.business.test.js:530:5)
+
+FAIL __tests__/app.accounts.test.js (20.39 s)
+  ● account creation by admin › a newly created account can log in with its PIN
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Welcome, David Otieno"
+    Received: "Invalid PIN"
+
+    [0m [90m 88 |[39m     adminCreatesAccount([32m"David Otieno"[39m[33m,[39m [32m"cashier"[39m[33m,[39m [32m"2222"[39m)[33m;[39m
+     [90m 89 |[39m     loginAs([32m"David Otieno"[39m[33m,[39m [32m"2222"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 90 |[39m     expect(document[33m.[39mquerySelector([32m"#toast"[39m)[33m.[39mtextContent)[33m.[39mtoBe(
+     [90m    |[39m                                                          [31m[1m^[22m[39m
+     [90m 91 |[39m       [32m"Welcome, David Otieno"[39m[33m,[39m
+     [90m 92 |[39m     )[33m;[39m
+     [90m 93 |[39m     expect(document[33m.[39mquerySelector([32m"#cashierName"[39m)[33m.[39mtextContent)[33m.[39mtoBe([0m
+
+      at Object.toBe (__tests__/app.accounts.test.js:90:58)
+
+  ● account creation by admin › admin can create another admin account (positive)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Welcome, Grace Achieng"
+    Received: "Invalid PIN"
+
+    [0m [90m  99 |[39m     adminCreatesAccount([32m"Grace Achieng"[39m[33m,[39m [32m"admin"[39m[33m,[39m [32m"3333"[39m)[33m;[39m
+     [90m 100 |[39m     loginAs([32m"Grace Achieng"[39m[33m,[39m [32m"3333"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 101 |[39m     expect(document[33m.[39mquerySelector([32m"#toast"[39m)[33m.[39mtextContent)[33m.[39mtoBe(
+     [90m     |[39m                                                          [31m[1m^[22m[39m
+     [90m 102 |[39m       [32m"Welcome, Grace Achieng"[39m[33m,[39m
+     [90m 103 |[39m     )[33m;[39m
+     [90m 104 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.accounts.test.js:101:58)
+
+  ● account creation by admin › created accounts persist across an app restart (edge case)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Welcome, David Otieno"
+    Received: "Invalid PIN"
+
+    [0m [90m 115 |[39m
+     [90m 116 |[39m     loginAs([32m"David Otieno"[39m[33m,[39m [32m"2222"[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m 117 |[39m     expect(document[33m.[39mquerySelector([32m"#toast"[39m)[33m.[39mtextContent)[33m.[39mtoBe(
+     [90m     |[39m                                                          [31m[1m^[22m[39m
+     [90m 118 |[39m       [32m"Welcome, David Otieno"[39m[33m,[39m
+     [90m 119 |[39m     )[33m;[39m
+     [90m 120 |[39m   })[33m;[39m[0m
+
+      at Object.toBe (__tests__/app.accounts.test.js:117:58)
+
+  ● only admins manage accounts › cashier cannot open the add-account modal (negative)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    [0m [90m 182 |[39m       [32m"Admin permission required"[39m[33m,[39m
+     [90m 183 |[39m     )[33m;[39m
+    [31m[1m>[22m[39m[90m 184 |[39m     expect(document[33m.[39mquerySelector([32m"#modal"[39m)[33m.[39mhidden)[33m.[39mtoBe([36mtrue[39m)[33m;[39m
+     [90m     |[39m                                                     [31m[1m^[22m[39m
+     [90m 185 |[39m   })[33m;[39m
+     [90m 186 |[39m })[33m;[39m
+     [90m 187 |[39m[0m
+
+      at Object.toBe (__tests__/app.accounts.test.js:184:53)
+

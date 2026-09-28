@@ -1,0 +1,73 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "predeploy": [
+      "npm run build:hosting"
+    ]
+  },
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    },
+    "functions": {
+      "host": "127.0.0.1",
+      "port": 5002
+    },
+    "ui": {
+      "enabled": true,
+      "host": "127.0.0.1",
+      "port": 4002
+    },
+    "hub": {
+      "host": "127.0.0.1",
+      "port": 4402
+    },
+    "logging": {
+      "host": "127.0.0.1",
+      "port": 4502
+    },
+    "eventarc": {
+      "host": "127.0.0.1",
+      "port": 9301
+    },
+    "tasks": {
+      "host": "127.0.0.1",
+      "port": 9501
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    }
+  ],
+  "auth": {
+    "providers": {
+      "anonymous": true,
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "My App",
+        "supportEmail": "support@undefined.firebaseapp.com"
+      }
+    }
+  }
+}

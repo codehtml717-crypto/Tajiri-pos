@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tajiri POS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" id="appStyles" />
+  <link rel="stylesheet" href="welcome.css" id="welcomeStyles" />
+  <style>
+    /* only one view is shown at a time; hidden must win over view display rules */
+    #appView[hidden], #welcomeView[hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="appView">
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" id="logo">
+        <span class="brand-mark">t</span>
+        <span>Tajiri POS</span>
+        </div>
+      <div class="topbar-actions">
+        <span class="status-dot" id="statusDot" title="Online"></span><span class="store-name" id="storeName">Main Store</span>
+        <select id="storeSelect" class="store-select" aria-label="Select store branch">
+          <option>Main Store</option>
+          <option>Westlands Branch</option>
+          <option>Marsabit Branch</option>
+        </select>
+        <button class="icon-button" aria-label="Notifications">♧</button>
+
+        <div class="more-menu-wrap">
+          <button class="more-button" id="moreButton" aria-expanded="false" aria-label="More">More ▾</button>
+          <div class="more-dropdown" id="moreDropdown" hidden>
+            <button class="more-menu-item" data-view="Inventory">▤ Inventory</button>
+            <button class="more-menu-item" data-view="Customers">♙ Customers</button>
+            <button class="more-menu-item" data-view="Staff">♟ Staff</button>
+            <button class="more-menu-item" data-view="Reports">▥ Reports</button>
+            <button class="more-menu-item" data-view="Settings">⚙ Settings</button>
+            <button class="more-menu-item" data-view="Receipts">▧ Receipts</button>
+            <button class="more-menu-item" data-view="Operations">✦ Operations</button>
+            <button class="more-menu-item" data-view="Expenses">▮ Expenses</button>
+            <button class="more-menu-item" data-view="Suppliers">⇄ Suppliers</button>
+            <button class="more-menu-item" data-view="Cash Book">▤ Cash Book</button>
+            <button class="more-menu-item" id="downloadDataButton" type="button">⇩ Download data</button>
+            <button class="more-menu-item" id="aboutButton" type="button">ⓘ About Tajiri POS</button>
+          </div>
+        </div>
+
+        <div class="topbar-user" id="userProfile" aria-label="Signed-in user profile">
+          <span class="user-avatar" id="userInitials" aria-hidden="true"></span>
+          <span class="user-profile-copy"><strong id="userName"></strong><small id="userRole"></small></span>
+        </div>
+        <button class="logout-button">↪ Logout</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <nav class="sidebar" aria-label="Main navigation">
+        <button class="nav-button active" aria-label="Sales" data-view="Sales">▣</button>
+        <button class="nav-button" aria-label="Inventory" data-view="Inventory">▤</button>
+        <button class="nav-button" aria-label="Customers" data-view="Customers">♙</button>
+        <button class="nav-button" aria-label="Staff" data-view="Staff">♟</button>
+        <button class="nav-button" aria-label="Reports" data-view="Reports">▥</button>
+        <button class="nav-button" aria-label="Settings" data-view="Settings">⚙</button>
+        <button class="nav-button" aria-label="Receipts" data-view="Receipts">▧</button>
+        <button class="nav-button" aria-label="Operations" data-view="Operations">✦</button>
+        <div class="sidebar-spacer"></div>
+      </nav>
+
+      <main class="main-content">
+        <section class="sales-area" data-view="Sales">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">POINT OF SALE</p>
+              <h1 id="pageTitle">New sale</h1>
+            </div>
+            <div class="page-heading-actions">
+              <label class="sale-type-picker" for="saleTypeSelect">
+                <span>Sale type</span>
+                <select id="saleTypeSelect" aria-label="Select sale type">
+                  <option value="retail">Retail</option>
+                  <option value="wholesale">Wholesale</option>
+                  <option value="special">Special sale</option>
+                </select>
+              </label>
+              <button class="secondary-button" id="clearSale">Clear sale</button>
+            </div>
+          </div>
+
+          <div class="search-wrap">
+            <span class="search-icon">⌕</span>
+            <input id="productSearch" type="search" placeholder="Search products by name or scan barcode" autocomplete="off" />
+            <div class="search-suggestions" id="searchSuggestions" hidden></div>
+            <span class="shortcut">⌘ K</span>
+          </div>
+
+          <div class="sales-stock-pulse" aria-label="Inventory snapshot">
+            <div class="sales-pulse-card pulse-green"><span class="pulse-icon">✦</span><div><small>Stock ready</small><strong id="salesStockReady">0 items</strong></div></div>
+            <div class="sales-pulse-card pulse-pink"><span class="pulse-icon">!</span><div><small>Needs attention</small><strong id="salesLowStock">0 low</strong></div></div>
+            <div class="sales-pulse-card pulse-blue"><span class="pulse-icon">↗</span><div><small>Top seller</small><strong id="salesTopSeller">—</strong></div></div>
+          </div>
+
+          <div class="catalog-header">
+            <h2>Cart <span id="cartCount">0 items</span></h2>
+            <button class="text-button" id="addCustom">＋ Add custom item</button>
+          </div>
+
+          <div class="cart-table">
+            <div class="table-head"><span>PRODUCT</span><span>QUANTITY</span><span>PRICE</span><span>AMOUNT</span><span></span></div>
+            <div id="cartItems" class="cart-items"></div>
+            <div id="emptyState" class="empty-state">
+              <div class="empty-icon">＋</div>
+              <strong>Your cart is empty</strong>
+              <span>Search for a product or choose one below to begin.</span>
+            </div>
+          </div>
+
+          <div class="quick-products" aria-hidden="true">
+            <div class="quick-heading"><h2>Quick add</h2><button class="text-button" id="viewCatalog">View catalog →</button></div>
+            <div class="product-grid" id="productGrid"></div>
+          </div>
+
+          <div class="lower-actions" aria-label="Sale actions">
+            <button class="lower-action active" id="lowerCash"><span>▣</span><strong>Cash</strong></button>
+            <button class="lower-action" id="lowerMpesa"><span>▥</span><strong>M-Pesa</strong></button>
+            <button class="lower-action" id="lowerPaybill"><span>▤</span><strong>Paybill</strong></button>
+            <button class="lower-action" id="lowerSplit"><span>↔</span><strong>Split payment</strong></button>
+            <button class="lower-action" id="lowerPoints"><span>♧</span><strong>Redeem points</strong></button>
+            <button class="lower-action" id="lowerDebt"><span>▭</span><strong>Debt</strong></button>
+            <button class="complete-sale-button" id="completeSale">✓ Complete sale</button>
+            <button class="lower-new-sale" id="lowerNewSale">＋ New sale</button>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view="Inventory" hidden>
+          <div class="panel-header"><p class="eyebrow">PRODUCT MANAGEMENT</p><h2>Stock control</h2></div>
+          <div class="module-toolbar"><div class="module-search">⌕<input id="inventorySearch" placeholder="Search products" /></div><button class="primary-button" id="addProductButton">＋ Add product</button></div>
+          <div class="panel-grid">
+            <div class="panel-card"><span>Stock items</span><strong id="stockCard">0</strong></div>
+            <div class="panel-card"><span>Low stock (≤5)</span><strong id="lowStockCard">0</strong></div>
+            <div class="panel-card"><span>Top seller</span><strong id="topSellerCard">—</strong></div>
+          </div>
+          <div class="inventory-table" id="inventoryTable"></div>
+        </section>
+
+        <section class="view-panel" data-view="Customers" hidden>
+          <div class="panel-header"><p class="eyebrow">CUSTOMERS & LOYALTY</p><h2>Loyalty profiles</h2></div>
+          <div class="panel-list" id="customerList"></div>
+          <button class="secondary-button panel-command" id="campaignButton">✉ Send SMS campaign</button>
+        </section>
+
+        <section class="view-panel" data-view="Staff" hidden>
+          <div class="panel-header"><p class="eyebrow">EMPLOYEES</p><h2>Staff access</h2></div>
+          <div class="panel-list" id="staffList"></div>
+          <button class="primary-button panel-command" id="addAccountButton">＋ Add account</button>
+        </section>
+
+        <section class="view-panel" data-view="Reports" hidden>
+          <div class="panel-header"><p class="eyebrow">REPORTS & ANALYTICS</p><h2>Business summary</h2></div>
+          <div class="panel-grid">
+            <div class="panel-card"><span>Today</span><strong id="reportToday">KES 0.00</strong></div>
+            <div class="panel-card"><span>Net profit</span><strong id="reportProfit">KES 0.00</strong></div>
+            <div class="panel-card"><span>Orders</span><strong id="reportOrders">0</strong></div>
+          </div>
+          <div class="panel-list">
+            <div class="panel-row"><span>Top-selling product</span><strong id="reportTop">No sales yet</strong></div>
+            <div class="panel-row"><span>Payment mix</span><strong id="reportPaymentMix">—</strong></div>
+            <div class="panel-row"><span>VAT collected (16%)</span><strong id="reportVat">KES 0.00</strong></div>
+            <div class="panel-row"><span>Expenses recorded</span><strong id="reportExpenses">KES 0.00</strong></div>
+          </div>
+          <div class="panel-list"><div class="panel-row panel-row-ai"><span>✨ AI insight</span><strong id="aiInsight">Add a product to start selling</strong></div></div>
+          <div class="module-toolbar">
+            <button class="secondary-button" id="smsReportButton">Send daily SMS summary</button>
+            <button class="secondary-button panel-command" id="exportReportButton">⇩ Export report</button>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view="Expenses" hidden>
+          <div class="panel-header"><p class="eyebrow">EXPENSE TRACKING</p><h2>Business expenses</h2></div>
+          <div class="module-toolbar"><button class="primary-button" id="addExpenseButton">＋ Record expense</button></div>
+          <div class="panel-list" id="expenseList"><div class="panel-row"><span>No expenses recorded yet</span><strong>—</strong></div></div>
+        </section>
+
+        <section class="view-panel" data-view="Cash Book" hidden>
+          <div class="panel-header"><p class="eyebrow">CASH MANAGEMENT</p><h2>Cash book</h2></div>
+          <div class="panel-grid">
+            <div class="panel-card"><span>Cash balance</span><strong id="cashBookBalance">KES 0.00</strong></div>
+            <div class="panel-card"><span>Money in</span><strong id="cashBookIn">KES 0.00</strong></div>
+            <div class="panel-card"><span>Money out</span><strong id="cashBookOut">KES 0.00</strong></div>
+          </div>
+          <div class="module-toolbar"><button class="primary-button" id="addCashEntryButton">＋ Add cash entry</button></div>
+          <div class="panel-list" id="cashBookList"></div>
+        </section>
+
+        <section class="view-panel" data-view="Suppliers" hidden>
+          <div class="panel-header"><p class="eyebrow">SUPPLY CHAIN</p><h2>Suppliers & purchase orders</h2></div>
+          <div class="panel-list" id="supplierList"></div>
+          <div class="panel-header"><p class="eyebrow">AUTO-GENERATED</p><h2>Suggested purchase orders</h2></div>
+          <div class="panel-list" id="purchaseOrderList"></div>
+        </section>
+
+        <section class="view-panel" data-view="Settings" hidden>
+          <div class="panel-header"><p class="eyebrow">SETTINGS</p><h2>Store preferences</h2></div>
+          <div class="settings-grid">
+            <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon settings-green">✦</span><div><h3>General</h3><p>Language, appearance, and alerts</p></div></div><div class="settings-fields">
+              <label class="setting-control"><span>Language & region</span><select id="languageSelect"><option value="en">English · Kenya</option><option value="sw">Kiswahili · Kenya</option></select></label>
+              <label class="setting-control"><span>Theme</span><select id="themeSelect"><option value="dark">Dark workspace</option><option value="light">Light workspace</option></select></label>
+              <label class="setting-control"><span>Background color</span><input id="backgroundColorInput" type="color" value="#1e1e1e"></label>
+              <label class="setting-toggle"><span><strong>Low-stock alerts</strong><small>Notify when stock reaches 5 or less</small></span><input id="lowStockAlertsToggle" type="checkbox" checked></label>
+              <label class="setting-toggle"><span><strong>Daily sales reports</strong><small>Prepare a daily summary for admin</small></span><input id="salesReportAlertsToggle" type="checkbox" checked></label>
+            </div></section>
+
+            <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon settings-blue">KES</span><div><h3>Business</h3><p>Prices, taxes, and receipts</p></div></div><div class="settings-fields">
+              <label class="setting-control"><span>Currency</span><select id="currencySelect"><option value="KES">KES · Kenyan Shilling</option><option value="USD">USD · US Dollar</option><option value="EUR">EUR · Euro</option><option value="UGX">UGX · Uganda Shilling</option></select></label>
+              <label class="setting-control"><span>VAT rate (%)</span><input id="taxRateInput" type="number" min="0" max="100" step="0.5" value="0"></label>
+              <label class="setting-control"><span>Service charge (%)</span><input id="serviceChargeInput" type="number" min="0" max="100" step="0.5" value="0"></label>
+              <label class="setting-control"><span>Discount rule</span><select id="discountRuleSelect"><option value="percentage">Percentage discount</option><option value="fixed">Fixed amount discount</option></select></label>
+              <label class="setting-control"><span>Receipt footer</span><input id="receiptFooterInput" placeholder="Thank you for shopping with us"></label>
+              <label class="setting-control"><span>Daraja backend URL</span><input id="darajaEndpointInput" type="url" placeholder="https://your-api.example.com/mpesa/stk-push"></label>
+              <label class="setting-control"><span>Paybill / till number</span><input id="darajaShortcodeInput" inputmode="numeric" maxlength="5" placeholder="e.g. 174379" required></label>
+            </div></section>
+
+            <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon settings-pink">⌁</span><div><h3>Users & security</h3><p>Access and session protection</p></div></div><div class="settings-fields">
+              <label class="setting-control"><span>Login method</span><select id="loginMethodSelect"><option value="pin">PIN</option><option value="password">Password</option><option value="biometric">Biometric (ready)</option></select></label>
+              <label class="setting-control"><span>Session timeout</span><select id="sessionTimeoutSelect"><option value="0">Never</option><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="60">60 minutes</option></select></label>
+              <div class="setting-note"><strong>Role permissions</strong><span id="settingsRole">Admin</span><small>Manage accounts from the Staff panel</small></div>
+              <div class="setting-note"><strong>Active store</strong><span id="settingsStoreName">Main Store</span><small>Switch branches from the top bar</small></div>
+            </div></section>
+
+            <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon settings-yellow">⚙</span><div><h3>Devices & payments</h3><p>Connect the tools at your counter</p></div></div><div class="settings-fields">
+              <label class="setting-control"><span>Receipt printer</span><select id="printerSelect"><option value="none">Not connected</option><option value="bluetooth">Bluetooth thermal printer</option><option value="wifi">Wi-Fi thermal printer</option></select></label>
+              <label class="setting-toggle"><span><strong>Barcode scanner</strong><small>Accept scanner input in the search bar</small></span><input id="scannerToggle" type="checkbox" checked></label>
+              <div class="payment-checks"><span>Payment methods</span><label><input id="mpesaToggle" type="checkbox" checked> M-Pesa</label><label><input id="airtelToggle" type="checkbox"> Airtel Money</label><label><input id="cardToggle" type="checkbox" checked> Card</label></div>
+              <label class="setting-toggle"><span><strong>Cash drawer</strong><small>Open drawer after completed cash sales</small></span><input id="cashDrawerToggle" type="checkbox"></label>
+            </div></section>
+
+            <section class="settings-card"><div class="settings-card-heading"><span class="settings-icon settings-blue">☁</span><div><h3>Backup & data</h3><p>Keep your store information portable</p></div></div><div class="settings-fields">
+              <label class="setting-toggle"><span><strong>Cloud backup</strong><small>Auto-sync when internet is available</small></span><input id="cloudBackupToggle" type="checkbox"></label>
+              <label class="setting-toggle"><span><strong>Offline mode</strong><small>Keep selling and sync later</small></span><input id="offlineToggle" type="checkbox"></label>
+              <button class="secondary-button settings-export" id="exportSettingsButton">⇩ Export settings</button>
+              <button class="secondary-button settings-reset" id="resetSettingsButton">↺ Reset settings</button>
+            </div></section>
+          </div>
+          <button class="primary-button panel-command" id="saveSettingsButton">Save settings</button>
+        </section>
+
+        <section class="view-panel" data-view="Receipts" hidden>
+          <div class="panel-header"><p class="eyebrow">RECEIPT PREVIEW</p><h2>Digital receipt</h2></div>
+          <div class="receipt-preview" id="receiptPreview"><strong id="receiptStore">DanLiz Ltd.</strong><span>Thank you for shopping with us</span><hr><div id="receiptLines"><span>Complete a sale to see a receipt</span></div></div><div class="receipt-actions"><button class="primary-button" id="printReceiptButton">▧ Print receipt</button><button class="secondary-button" id="sendReceiptButton">Send to WhatsApp</button></div>
+        </section>
+
+        <section class="view-panel" data-view="Operations" hidden>
+          <div class="panel-header"><p class="eyebrow">BUSINESS OPERATIONS</p><h2>Everything in one place</h2></div>
+          <div class="panel-grid">
+            <div class="panel-card"><span>Active store</span><strong>Marsabit Main</strong><small>1 of 3 branches</small></div>
+            <div class="panel-card"><span>Offline mode</span><strong>Ready</strong><small>Last sync 2 min ago</small></div>
+            <div class="panel-card"><span>VAT this month</span><strong>KES 8,460</strong><small>Tax report available</small></div>
+          </div>
+          <div class="operations-grid">
+            <article class="operation-card"><span class="operation-icon">⌂</span><div><h3>Multi-store</h3><p>Manage Marsabit Main, East Branch, and Market Stall.</p></div><button class="row-action" data-operation="stores">Manage</button></article>
+            <article class="operation-card"><span class="operation-icon">⌁</span><div><h3>Expenses</h3><p>Rent, salaries, utilities, and other costs.</p></div><button class="row-action" data-operation="expense">Add expense</button></article>
+            <article class="operation-card"><span class="operation-icon">▱</span><div><h3>Suppliers</h3><p>Purchase orders and delivery tracking.</p></div><button class="row-action" data-operation="suppliers">View suppliers</button></article>
+            <article class="operation-card"><span class="operation-icon">⚿</span><div><h3>Roles & access</h3><p>Cashier and admin permissions are protected.</p></div><button class="row-action" data-operation="roles">Manage roles</button></article>
+            <article class="operation-card"><span class="operation-icon">◎</span><div><h3>Currency & wallets</h3><p>KES, USD, M-Pesa, PayPal, and BNPL.</p></div><button class="row-action" data-operation="payments">Configure</button></article>
+            <article class="operation-card"><span class="operation-icon">✧</span><div><h3>AI insights</h3><p>Reorder sugar soon; Blue Band is trending.</p></div><button class="row-action" data-operation="insights">Open insights</button></article>
+          </div>
+          <div class="panel-list"><div class="panel-row"><span>Notifications</span><strong>6 low-stock alerts · Daily summary ready</strong></div><div class="panel-row"><span>Accounting integrations</span><strong>QuickBooks · Xero · Dynamics 365</strong></div><div class="panel-row"><span>Customer feedback & marketing</span><strong>Campaigns and post-sale ratings</strong></div></div>
+        </section>
+
+        <aside class="sale-panel">
+          <div class="sale-panel-heading">
+            <div><p class="eyebrow">CURRENT SALE</p><h2>Sale #SALE-2084</h2></div>
+            <span class="sale-badge" id="saleTypeBadge">Retail</span>
+          </div>
+          <div class="summary-body">
+            <div class="summary-row"><span>Subtotal</span><strong id="subtotal">0.00</strong></div>
+            <div class="summary-row muted"><span>Discount</span><button class="add-discount" id="discountButton">Add discount</button></div>
+            <div class="summary-row muted"><span>VAT (<span id="taxRateLabel">0%</span>)</span><strong id="tax">0.00</strong></div>
+            <div class="summary-row muted"><span>Service charge (<span id="serviceChargeLabel">0%</span>)</span><strong id="serviceCharge">0.00</strong></div>
+            <div class="summary-row total"><span>Total</span><strong id="total">0.00</strong></div>
+            <div class="points-row"><span>Points earned</span><strong id="points">0 pts</strong></div>
+          </div>
+          <div class="sale-meta"><span>Cashier: <strong id="cashierName">Not signed in</strong></span><span id="syncStatus">Online</span></div>
+          <div class="action-grid">
+            <button class="action-button" id="deliveryButton"><span class="action-icon">▱</span><span>Direct delivery</span></button>
+            <button class="action-button" id="assignButton"><span class="action-icon">▰</span><span>Assign delivery guy</span></button>
+            <button class="action-button" id="holdButton"><span class="action-icon">Ⅱ</span><span>Hold sale</span></button>
+            <button class="action-button" id="refreshButton"><span class="action-icon">⟳</span><span>Refresh</span></button>
+          </div>
+          <div class="payment-actions">
+            <button class="payment-button cash" id="cashButton"><span>Cash</span><strong>F2</strong></button>
+            <button class="payment-button card" id="cardButton"><span>Card / M-Pesa</span><strong>F4</strong></button>
+            <button class="payment-button card" id="paypalButton"><span>PayPal</span><strong>Wallet</strong></button>
+            <button class="payment-button cash" id="bnplButton"><span>Buy Now Pay Later</span><strong>BNPL</strong></button>
+          </div>
+          <button class="new-sale-button" id="newSaleButton">＋ New sale</button>
+        </aside>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+    <div id="modal" class="modal" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header"><h2 id="modalTitle"></h2><button class="modal-close" id="modalClose" aria-label="Close dialog">×</button></div>
+        <div id="modalBody" class="modal-body"></div>
+        <div id="modalActions" class="modal-actions"></div>
+      </div>
+    </div>
+  </div>
+  </div><!-- /#appView -->
+
+  <!-- WELCOME-BOOT-START -->
+  <div id="appLoader" class="app-loader" aria-live="polite" aria-label="Loading DanLiz POS">
+    <div class="loader-wrap">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Loading POS...</div>
+    </div>
+  </div>
+
+  <!-- WELCOME-VIEW-START -->
+  <div id="welcomeView" hidden>
+    <nav class="site-nav" aria-label="Welcome navigation">
+      <a class="nav-brand" href="#home"><span class="nav-brand-mark">d</span>DanLiz POS</a>
+      <div class="nav-more">
+        <button type="button" class="nav-link nav-more-btn" id="navMoreBtn" aria-expanded="false" aria-haspopup="true">More ▾</button>
+        <div class="nav-more-menu" id="navMoreMenu" hidden>
+          <button type="button" class="nav-link" data-modal-open="modal-about">ⓘ About</button>
+          <button type="button" class="nav-link" data-modal-open="modal-features">▤ POS Features</button>
+          <button type="button" class="nav-link" data-modal-open="modal-downloads">⇩ Downloads</button>
+          <button type="button" class="nav-link" data-modal-open="modal-contact">✉ Contact</button>
+          <div class="more-sep"></div>
+          <button type="button" class="nav-link" data-modal-open="modal-access">▶ Try the demo →</button>
+          <button type="button" class="nav-link" data-modal-open="modal-downloads">📥 Download software</button>
+          <div class="more-sep"></div>
+          <span class="more-chip">▣ Fast checkout</span>
+          <span class="more-chip">▤ Inventory</span>
+          <span class="more-chip">▥ Reports</span>
+          <span class="more-chip">☁ Offline</span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="home-section" id="home">
+        <div class="hero-ladybirds" aria-hidden="true">
+          <span class="ladybird l1"></span>
+          <span class="ladybird l2"></span>
+          <span class="ladybird l3"></span>
+        </div>
+        <div class="hero-card">
+          <img class="hero-avatar" src="assets/logo.png" alt="DanLiz POS logo" width="84" height="84" />
+          <h1>Welcome to <span class="grad">DanLiz POS System</span></h1>
+          <p class="tagline">Smart POS Solutions for Modern Shops</p>
+          <div class="hero-actions">
+            <button type="button" class="hero-action" data-modal-open="modal-access" data-auth-tab="login">Log in</button>
+            <button type="button" class="hero-action primary" data-modal-open="modal-access" data-auth-tab="signup">Create account</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>© <span id="heroYear"></span> DanLiz POS · Bondo, Siaya County · <span id="heroAccounts">—</span></span>
+    </footer>
+
+    <div class="modal-layer" id="modal-about" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="About DanLiz POS">
+        <div class="modal-head"><h2>About DanLiz POS</h2><button type="button" class="modal-close" data-modal-close aria-label="Close">×</button></div>
+        <div class="modal-body">
+          <p class="section-sub">A local-first retail workspace for sales, inventory, customers, reports and cash management — built for Kenyan shops and businesses.</p>
+          <div class="about-grid">
+            <div class="about-card"><span>⌂</span><strong>Multi-store</strong><small>Manage branches, stores and market stalls from one place.</small></div>
+            <div class="about-card"><span>⌁</span><strong>M-Pesa ready</strong><small>STK push via Daraja, paybill, till and split payments.</small></div>
+            <div class="about-card"><span>⚿</span><strong>Role-based access</strong><small>Admin, manager and cashier permissions built in.</small></div>
+            <div class="about-card"><span>✧</span><strong>AI insights</strong><small>Reorder suggestions and daily summaries for owners.</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-layer" id="modal-features" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="POS System Showcase">
+        <div class="modal-head"><h2>POS System Showcase</h2><button type="button" class="modal-close" data-modal-close aria-label="Close">×</button></div>
+        <div class="modal-body">
+          <div class="showcase">
+            <div class="showcase-shot" aria-hidden="true">
+              <div class="shot-topbar"><b></b><b></b><b></b><i>Main Store</i></div>
+              <div class="shot-cols">
+                <div class="shot-side"><b></b><b></b><b></b></div>
+                <div class="shot-main">
+                  <div class="shot-row search"></div>
+                  <div class="shot-row"></div>
+                  <div class="shot-row short"></div>
+                  <div class="shot-row short"></div>
+                </div>
+                <div class="shot-panel"><b class="shot-total"></b><b class="shot-btn"></b><b class="shot-btn s"></b></div>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li><span>⌕</span><div><strong>Login & role-based access</strong><small>Secure sign-in with admin, manager and cashier roles.</small></div></li>
+              <li><span>▤</span><div><strong>Product management</strong><small>Stock levels, barcodes, low-stock alerts and suppliers.</small></div></li>
+              <li><span>▣</span><div><strong>Sales & payments</strong><small>Cash, M-Pesa, card, PayPal, BNPL and split payments.</small></div></li>
+              <li><span>▧</span><div><strong>Receipts</strong><small>Digital receipts you can print or send to WhatsApp.</small></div></li>
+              <li><span>▥</span><div><strong>Reports</strong><small>Daily sales, profit, VAT, payment mix and AI insights.</small></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-layer" id="modal-access" hidden>
+      <div class="modal-card auth-card" role="dialog" aria-modal="true" aria-label="Login or create account">
+        <div class="modal-head"><h2>Login or Create Account</h2><button type="button" class="modal-close" data-modal-close aria-label="Close">×</button></div>
+        <div class="modal-body">
+          <div class="auth-tabs" role="tablist">
+            <button type="button" class="auth-tab active" id="tabLogin" data-tab="login" role="tab" aria-selected="true">Sign in</button>
+            <button type="button" class="auth-tab" id="tabSignup" data-tab="signup" role="tab" aria-selected="false">Create account</button>
+          </div>
+
+          <form class="auth-form active" id="loginForm" novalidate>
+            <h2>Welcome back</h2>
+            <p class="auth-sub">Sign in to open your workspace.</p>
+            <label>Username or email
+              <input id="loginIdentity" type="text" autocomplete="username" placeholder="e.g. amina or amina@example.com" required />
+            </label>
+            <label>Password
+              <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Your password" required />
+            </label>
+            <div class="auth-row">
+              <label class="auth-check"><input type="checkbox" id="rememberLogin" /> Remember me</label>
+              <button type="button" class="auth-link" id="forgotLink">Forgot password?</button>
+            </div>
+            <button type="submit" class="auth-submit" id="loginSubmit">Sign in →</button>
+            <p class="auth-switch">New here? <button type="button" data-switch="signup">Create an account</button></p>
+            <p class="auth-error" id="loginError" hidden></p>
+          </form>
+
+          <form class="auth-form" id="signupForm" novalidate>
+            <h2>Create your account</h2>
+            <p class="auth-sub">Set up a store account and start selling.</p>
+            <label>Full name <input id="signupName" type="text" placeholder="e.g. Amina Otieno" required /></label>
+            <div class="auth-two">
+              <label>Username <input id="signupUsername" type="text" autocomplete="username" placeholder="e.g. amina" required /></label>
+              <label>Phone <small>(optional)</small> <input id="signupPhone" type="tel" placeholder="07xx xxx" /></label>
+            </div>
+            <label>Email <input id="signupEmail" type="email" autocomplete="email" placeholder="amina@example.com" required /></label>
+            <div class="auth-two">
+              <label>Password <input id="signupPassword" type="password" autocomplete="new-password" placeholder="At least 5 characters" required /></label>
+              <label>Confirm <input id="signupConfirmPassword" type="password" autocomplete="new-password" placeholder="Repeat password" required /></label>
+            </div>
+            <label>Role
+              <select id="signupRole">
+                <option value="admin">Admin — full access</option>
+                <option value="manager">Manager</option>
+                <option value="cashier">Cashier</option>
+              </select>
+            </label>
+            <div class="auth-strength" id="strengthMeter" hidden>
+              <div class="auth-strength-bar"><span id="strengthFill"></span></div>
+              <small id="strengthLabel"></small>
+            </div>
+            <button type="submit" class="auth-submit" id="signupSubmit">Create account →</button>
+            <p class="auth-switch">Already registered? <button type="button" data-switch="login">Sign in instead</button></p>
+            <p class="auth-error" id="signupError" hidden></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-layer" id="modal-downloads" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Download the software">
+        <div class="modal-head"><h2>Download the software</h2><button type="button" class="modal-close" data-modal-close aria-label="Close">×</button></div>
+        <div class="modal-body">
+          <div class="download-grid">
+            <a class="dl-card" href="downloads/DanLiz-POS-demo.apk" download>
+              <span>▾</span><strong>Android demo</strong><small>DanLiz-POS-demo.apk</small>
+            </a>
+            <a class="dl-card" href="downloads/DanLiz-POS-setup.exe" download>
+              <span>▾</span><strong>Windows installer</strong><small>DanLiz-POS-setup.exe</small>
+            </a>
+            <a class="dl-card" href="downloads/DanLiz-POS-documentation.pdf" download>
+              <span>▤</span><strong>Documentation</strong><small>DanLiz-POS-documentation.pdf</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-layer" id="modal-contact" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-label="Contact">
+        <div class="modal-head"><h2>Contact</h2><button type="button" class="modal-close" data-modal-close aria-label="Close">×</button></div>
+        <div class="modal-body">
+          <p class="section-sub">Questions, demos or custom setups — reach out any time.</p>
+          <div class="contact-list">
+            <a href="mailto:hello@danlizpos.example">✉ hello@danlizpos.example</a>
+            <a href="https://github.com/" target="_blank" rel="noopener">⌥ GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">in LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /#welcomeView -->
+
+  <div id="toast" class="toast auth-toast" role="status"></div>
+  <!-- WELCOME-VIEW-END -->
+  <!-- WELCOME-BOOT-END -->
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script>
+    window.firebaseAuth = null;
+    window.firebaseDb = null;
+    const firebaseConfig = {
+      apiKey: "AIzaSyBFED7cWf-yOJw6KabJC2XcZWbBn4fzqig",
+      authDomain: "my-tajiri-pos.firebaseapp.com",
+      projectId: "my-tajiri-pos",
+      storageBucket: "my-tajiri-pos.firebasestorage.app",
+      messagingSenderId: "674233610758",
+      appId: "1:674233610758:web:6281aa9dbd2b9e75754987",
+      measurementId: "G-K6H8TG68SF"
+    };
+
+    window.TAJIRI_FIREBASE_CONFIG = firebaseConfig;
+
+    if (window.firebase && window.TAJIRI_FIREBASE_CONFIG) {
+      const config = window.TAJIRI_FIREBASE_CONFIG;
+      const hasRealValues = config.apiKey && !config.apiKey.startsWith("REPLACE_");
+      if (hasRealValues) {
+        try {
+          const app = firebase.initializeApp(config);
+          window.firebaseAuth = firebase.auth();
+          window.firebaseDb = firebase.firestore();
+          console.log("Firebase connected:", app.name);
+        } catch (error) {
+          console.warn("Firebase initialization failed:", error);
+        }
+      }
+    }
+  </script>
+  <script>
+    /* Single-page guard: show the welcome view or the POS app view based on
+       the session, and load only the script that view needs. */
+    (function () {
+      const appView = document.getElementById("appView");
+      const welcomeView = document.getElementById("welcomeView");
+      const session =
+        sessionStorage.getItem("tajiri-session-user") ||
+        localStorage.getItem("tajiri-remembered-user");
+      const inApp = Boolean(session);
+      window.__tajiriInApp = inApp;
+
+      const script = document.createElement("script");
+      if (inApp) {
+        welcomeView.hidden = true;
+        appView.hidden = false;
+        document.getElementById("welcomeStyles").disabled = true;
+        script.src = "app.js";
+      } else {
+        appView.hidden = true;
+        welcomeView.hidden = false;
+        document.getElementById("appStyles").disabled = true;
+        script.src = "welcome.js";
+      }
+      document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+﻿diff --git a/app.js b/app.js
+index 9ffd2f0..5775c1c 100644
+--- a/app.js
++++ b/app.js
+@@ -639,14 +639,7 @@ modalActions.addEventListener("click", async event => {
+   }
+   if (action !== "confirm") return;
+   if (modalPurpose === "logout") {
+-    currentUser = null;
+-    sessionStorage.removeItem("tajiri-session-user");
+-    localStorage.removeItem("tajiri-remembered-user");
+-    applyRole();
+-    activateView("Sales");
+-    closeModal();
+-    showToast("Signed out");
+-    window.location.href = "welcome.html";
++    logoutCurrentUser();
+     return;
+   }
+   if (modalPurpose === "reset-settings") {
+@@ -743,11 +736,18 @@ modalActions.addEventListener("click", async event => {
+ });
+ 
+ document.querySelector(".icon-button").addEventListener("click", () => openModal("Notifications", `<p class="modal-note">No new notifications. Inventory and sales are up to date.</p>`, `<button type="button" class="modal-primary" data-modal-action="cancel">Done</button>`));
++
++function logoutCurrentUser() {
++  currentUser = null;
++  sessionStorage.removeItem("tajiri-session-user");
++  localStorage.removeItem("tajiri-remembered-user");
++  applyRole();
++  closeModal();
++  showToast("Signed out");
++  window.location.replace("index.html");
++}
++
+ document.querySelector(".logout-button").addEventListener("click", () => { openModal("Sign out", `<p>Are you sure you want to sign out of Tajiri POS?</p>`, actionButtons("Sign out")); modalPurpose = "logout"; });
+-document.querySelector("#signupButton")?.addEventListener("click", () => {
+-  if (currentUser?.role !== "admin") return showToast("Admin permission required");
+-  openModal("Create account", `<p class="auth-kicker">Create a secure account for a cashier or manager.</p><label>Full name<input id="signupName" placeholder="e.g. Amina Otieno" required></label><label>Username<input id="signupUsername" autocomplete="username" placeholder="e.g. amina" required></label><label>Email<input id="signupEmail" type="email" placeholder="amina@example.com" required></label><label>Password<input id="signupPassword" type="password" autocomplete="new-password" maxlength="5" placeholder="Up to 5 characters" required></label><label>Confirm password<input id="signupConfirmPassword" type="password" autocomplete="new-password" maxlength="5" required></label><label>Role<select id="signupRole"><option value="cashier">Cashier</option><option value="manager">Manager</option><option value="admin">Admin</option></select></label><label>Phone (optional)<input id="signupPhone" type="tel" placeholder="For M-Pesa notifications"></label>`, actionButtons("Create account"));
+-});
+ document.querySelector("#addProductButton")?.addEventListener("click", () => openModal("Add product", `<label>Product name<input id="newProductName" placeholder="e.g. Maize flour"></label><label>Price (KES)<input id="newProductPrice" type="number" min="1" placeholder="0.00"></label>`, actionButtons("Add product")));
+ document.querySelector("#exportReportButton")?.addEventListener("click", () => showToast("Report export is ready to connect"));
+ document.querySelector("#printReceiptButton")?.addEventListener("click", () => showToast("Receipt sent to printer"));
+@@ -1080,6 +1080,10 @@ function applyRole() {
+   if (role) role.textContent = roleLabel;
+   const staffButton = document.querySelector("#staffButton");
+   if (staffButton) staffButton.innerHTML = `${currentUser ? currentUser.name : "Not signed in"} <span>⚙</span>`;
++  const userName = document.querySelector("#userName");
++  if (userName) {
++    userName.textContent = currentUser ? currentUser.name.trim() : "";
++  }
+   const welcomeHeader = document.querySelector("#welcomeHeaderLabel");
+   if (welcomeHeader) {
+     welcomeHeader.textContent = currentUser ? `Welcome, ${currentUser.name}` : "Welcome";
+@@ -1147,9 +1151,89 @@ function saveState() {
+     localStorage.setItem("tajiri-pos", JSON.stringify({
+       users, salesLog, expenses, purchaseOrders, pendingMpesa, loyaltyBalance, cashBook, productsStock: products.map(p => ({ id: p.id, stock: p.stock })), settings
+     }));
++    queueCloudSync();
+   } catch (e) { /* storage unavailable — stay in-memory */ }
+ }
+ 
++/* ---------- Cloud backup (Firestore) ---------- */
++/* Data is pushed to the "tajiri-backup" Firestore document whenever saveState()
++   runs (debounced), and restored on boot if the local copy is missing — e.g.
++   after reinstalling or moving to a new device. Passwords are only ever stored
++   as SHA-256 hashes, never in plain text. */
++let cloudSyncTimer = null;
++let cloudSyncBusy = false;
++
++function cloudSyncAvailable() {
++  return Boolean(window.firebaseDb && settings.cloudBackup && navigator.onLine);
++}
++
++function queueCloudSync() {
++  if (!cloudSyncAvailable()) return;
++  clearTimeout(cloudSyncTimer);
++  cloudSyncTimer = setTimeout(performCloudSync, 4000); // debounce: 4s after last save
++}
++
++async function performCloudSync() {
++  if (!cloudSyncAvailable() || cloudSyncBusy) return;
++  cloudSyncBusy = true;
++  try {
++    const payload = {
++      updatedAt: Date.now(),
++      users,
++      salesLog,
++      expenses,
++      purchaseOrders,
++      pendingMpesa,
++      loyaltyBalance,
++      cashBook,
++      productsStock: products.map(p => ({ id: p.id, stock: p.stock })),
++      settings
++    };
++    await window.firebaseDb.collection("tajiri").doc("backup").set(payload);
++    localStorage.setItem("tajiri-last-cloud-sync", String(Date.now()));
++    const sync = document.querySelector("#syncStatus");
++    if (sync) sync.textContent = "Cloud synced";
++  } catch (e) {
++    console.warn("Cloud backup failed:", e);
++    showToast("Cloud backup failed — data stays safe locally");
++  } finally {
++    cloudSyncBusy = false;
++  }
++}
++
++async function restoreFromCloudIfLocalEmpty() {
++  if (!window.firebaseDb) return false;
++  try {
++    const snapshot = await window.firebaseDb.collection("tajiri").doc("backup").get();
++    if (!snapshot.exists) return false;
++    const data = snapshot.data();
++    if (!data || !Array.isArray(data.users) || !data.users.length) return false;
++
++    // Restore cloud copy locally, then continue the normal boot path.
++    users = data.users;
++    salesLog = data.salesLog || [];
++    expenses = data.expenses || [];
++    purchaseOrders = data.purchaseOrders || [];
++    pendingMpesa = data.pendingMpesa || [];
++    loyaltyBalance = data.loyaltyBalance || 0;
++    cashBook = data.cashBook || [];
++    Object.assign(settings, data.settings || {});
++    (data.productsStock || []).forEach(s => {
++      const product = products.find(p => p.id === s.id);
++      if (product) product.stock = s.stock;
++    });
++    try {
++      localStorage.setItem("tajiri-pos", JSON.stringify({
++        users, salesLog, expenses, purchaseOrders, pendingMpesa, loyaltyBalance, cashBook, productsStock: data.productsStock || [], settings
++      }));
++    } catch (e) { /* storage unavailable — stay in-memory */ }
++    return true;
++  } catch (e) {
++    console.warn("Cloud restore skipped:", e);
++    return false;
++  }
++}
++
+ function restoreCurrentUser() {
+   const keys = [
+     sessionStorage.getItem("tajiri-session-user"),
+@@ -1379,15 +1463,11 @@ document.querySelector("#sendReceiptButton")?.addEventListener("click", () => {
+   const text = lastSale ? `${settings.storeName}: receipt ${lastSale.id}, total ${settings.currency} ${money(lastSale.total)}` : "Tajiri POS receipt";
+   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+ });
+-
+-document.querySelector("#staffButton")?.addEventListener("click", () => document.querySelector("#staffLoginButton")?.click());
+-
+ document.querySelector("#addAccountButton")?.addEventListener("click", () => {
+-  if (currentUser?.role !== "admin") return showToast("Admin permission required");
+   openModal("Create staff account", `<label>Full name<input id="newAccountName" required></label><label>Role<select id="newAccountRole"><option value="cashier">Cashier</option><option value="admin">Admin</option></select></label><label>PIN<input id="newAccountPin" type="password" inputmode="numeric" required></label>`, actionButtons("Create account"));
+ });
+ 
+-/* Handle login + add/edit product + expense + feedback inside the shared modal */
++/* Handle add/edit product + expense + feedback inside the shared modal */
+ document.addEventListener("click", async event => {
+   const receiptAction = event.target.dataset?.receiptAction;
+   if (receiptAction === "print") return window.print();
+@@ -1404,58 +1484,9 @@ document.addEventListener("click", async event => {
+   const star = event.target.closest?.(".rating-star");
+   if (star) { closeModal(); showToast(`Thanks for rating us ${star.dataset.rating}/5`); return; }
+ 
+-  if (event.target.id === "forgotPasswordButton") {
+-    showToast("Ask an admin to reset your password");
+-    return;
+-  }
+-  if (event.target.id === "googleLoginButton") {
+-    openModal("Google sign-in setup", `<p class="modal-note">Google OAuth needs a backend callback, Google client ID, and token verification before it can sign you in securely.</p><p class="modal-note">After setup, approved email domains can be mapped to Cashier, Manager, or Admin roles.</p>`, `<button type="button" class="modal-primary" data-modal-action="cancel">Close</button>`);
+-    return;
+-  }
+-
+   const isConfirm = event.target.dataset?.modalAction === "confirm";
+   if (!isConfirm) return;
+ 
+-  const signupName = document.querySelector("#signupName");
+-  if (signupName) {
+-    if (currentUser?.role !== "admin" && modalPurpose !== "self-signup") return showToast("Admin permission required");
+-    const name = signupName.value.trim();
+-    const username = document.querySelector("#signupUsername").value.trim().toLowerCase();
+-    const email = document.querySelector("#signupEmail").value.trim().toLowerCase();
+-    const password = document.querySelector("#signupPassword").value;
+-    const confirmPassword = document.querySelector("#signupConfirmPassword").value;
+-    const role = document.querySelector("#signupRole").value;
+-    if (!name || !username || !email || !password || !confirmPassword) return showToast("Complete all required fields");
+-    if (!/^\S+@\S+\.\S+$/.test(email)) return showToast("Enter a valid email address");
+-    if (users.some(user => user.username?.toLowerCase() === username || user.email?.toLowerCase() === email)) return showToast("Username or email already exists");
+-    if (password !== confirmPassword) return showToast("Passwords do not match");
+-    if (password.length > 5) return showToast("Password must be 5 characters or fewer");
+-    const phone = document.querySelector("#signupPhone").value.trim();
+-    const selfSignup = modalPurpose === "self-signup";
+-    users.push({ name, username, email, role, phone, passwordHash: await hashPassword(password) });
+-    saveState();
+-    renderAllPanels();
+-    closeModal();
+-    showToast("Account created successfully!");
+-    if (selfSignup) showStaffLogin();
+-    return;
+-  }
+-
+-  const loginIdentity = document.querySelector("#loginIdentity");
+-  if (loginIdentity) {
+-    const identity = loginIdentity.value.trim();
+-    const password = document.querySelector("#loginPassword").value;
+-    if (!identity || !password) return showToast("Enter your username/email and password");
+-    if (!await loginWithPassword(identity, password)) return showToast("Invalid username/email or password");
+-    if (document.querySelector("#rememberLogin")?.checked) localStorage.setItem("tajiri-remembered-user", identity.toLowerCase());
+-    return closeModal();
+-  }
+-  const staffAccount = document.querySelector("#staffAccount");
+-  if (staffAccount) {
+-    const pin = document.querySelector("#staffPin").value;
+-    if (!loginWithPin(staffAccount.value, pin)) return showToast("Invalid PIN");
+-    return closeModal();
+-  }
+   const newAccountName = document.querySelector("#newAccountName");
+   if (newAccountName) {
+     const name = newAccountName.value.trim();
+@@ -1471,6 +1502,7 @@ document.addEventListener("click", async event => {
+     showToast(`Account created for ${name}`);
+     return;
+   }
++
+   const productName = document.querySelector("#productName");
+   if (productName) {
+     const name = productName.value.trim();
+@@ -1529,11 +1561,32 @@ document.addEventListener("click", async event => {
+ /* ---------- Boot ---------- */
+ loadState();
+ setOffline(offlineMode);
+-if (!currentUser) {
+-  showStaffLogin();
+-} else {
+-  renderAllPanels();
+-  renderProducts();
+-  renderCart();
+-  renderSalesStockPulse();
+-}
++renderAllPanels();
++renderProducts();
++renderCart();
++renderSalesStockPulse();
++applyRole();
++
++/* Cloud: pull data into a fresh/empty device, then keep it in sync. */
++(async () => {
++  if (!window.firebaseDb) return;
++  try {
++    const snapshot = await window.firebaseDb.collection("tajiri").doc("backup").get();
++    const hasLocal = Boolean(localStorage.getItem("tajiri-pos"));
++    if (!hasLocal && snapshot.exists) {
++      const restored = await restoreFromCloudIfLocalEmpty();
++      if (restored) {
++        loadState();
++        renderAllPanels();
++        renderProducts();
++        renderCart();
++        renderSalesStockPulse();
++        applyRole();
++        showToast("Data restored from cloud backup");
++      }
++    }
++    if (settings.cloudBackup && navigator.onLine) performCloudSync();
++  } catch (e) {
++    console.warn("Cloud boot sync skipped:", e);
++  }
++})();
