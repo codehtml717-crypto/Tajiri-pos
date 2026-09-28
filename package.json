@@ -5,6 +5,7 @@
   "main": "desktop.js",
   "scripts": {
     "test": "jest --forceExit",
+    "build": "node scripts/build-static.cjs",
     "build:hosting": "node scripts/build-hosting.js",
     "api": "node daraja/server.js",
     "desktop": "electron .",
